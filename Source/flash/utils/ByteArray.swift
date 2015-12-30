@@ -210,7 +210,6 @@ class ByteArray {
 		self.data.getBytes(&value, range: range)
 		position += range.length
 		return endian == Endian.BIG_ENDIAN ? value.bigEndian : value
-		
 	}
 	
 	
@@ -225,7 +224,6 @@ class ByteArray {
 		range.length = 1
 		self.data.replaceBytesInRange(range, withBytes: &value)
 		position += range.length
-		
 	}
 	/**
 	 在字节流中写入一个字节。<p>
