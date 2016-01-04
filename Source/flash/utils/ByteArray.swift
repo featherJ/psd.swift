@@ -733,6 +733,10 @@ class ByteArray {
 	 The string representation of the byte array.
 	 */
 	func toString() -> String {
-		return "";
+		var str: String = "";
+		for (var i: Int = 0;i < self.length;i++) {
+			str += String.fromCharCode(UInt(self[i])) ;
+		}
+		return str;
 	}
 }

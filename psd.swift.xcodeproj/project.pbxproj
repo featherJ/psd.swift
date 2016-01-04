@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7830EA8D1C3ADE200059DC06 /* PSDBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */; };
+		7830EA8E1C3ADE200059DC06 /* PSDBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */; };
+		7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
+		7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
 		7876B9071C3442120016ABF2 /* psd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B8FC1C3442120016ABF2 /* psd.framework */; };
 		7876B90C1C3442120016ABF2 /* psd_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876B90B1C3442120016ABF2 /* psd_swiftTests.swift */; };
 		7876B9251C34426D0016ABF2 /* psd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B91B1C34426D0016ABF2 /* psd.framework */; };
@@ -44,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDBytes.swift; sourceTree = "<group>"; };
+		7830EA901C3AF1B80059DC06 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7876B8FC1C3442120016ABF2 /* psd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = psd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7876B9061C3442120016ABF2 /* psdiOSTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = psdiOSTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7876B90B1C3442120016ABF2 /* psd_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = psd_swiftTests.swift; sourceTree = "<group>"; };
@@ -100,6 +106,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7830EA881C3ADE0A0059DC06 /* com */ = {
+			isa = PBXGroup;
+			children = (
+				7830EA891C3ADE0A0059DC06 /* fancynode */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		7830EA891C3ADE0A0059DC06 /* fancynode */ = {
+			isa = PBXGroup;
+			children = (
+				7830EA8A1C3ADE0A0059DC06 /* core */,
+				7830EA8B1C3ADE0A0059DC06 /* infos */,
+			);
+			path = fancynode;
+			sourceTree = "<group>";
+		};
+		7830EA8A1C3ADE0A0059DC06 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		7830EA8B1C3ADE0A0059DC06 /* infos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = infos;
+			sourceTree = "<group>";
+		};
+		7830EA8F1C3AF17D0059DC06 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7830EA901C3AF1B80059DC06 /* StringExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		7876B8F21C3442120016ABF2 = {
 			isa = PBXGroup;
 			children = (
@@ -135,9 +181,10 @@
 		7876B9321C3442AA0016ABF2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7876B9371C3443A90016ABF2 /* flash */,
 				7876B9331C3442AA0016ABF2 /* Info.plist */,
 				7876B9341C3442AA0016ABF2 /* psd.swift.h */,
+				7876B9371C3443A90016ABF2 /* flash */,
+				7830EA881C3ADE0A0059DC06 /* com */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -145,6 +192,7 @@
 		7876B9371C3443A90016ABF2 /* flash */ = {
 			isa = PBXGroup;
 			children = (
+				7830EA8F1C3AF17D0059DC06 /* extensions */,
 				7876B9381C3443A90016ABF2 /* utils */,
 			);
 			path = flash;
@@ -366,7 +414,9 @@
 			files = (
 				7876B93E1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93C1C3443A90016ABF2 /* ByteArray.swift in Sources */,
+				7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9401C3443A90016ABF2 /* Endian.swift in Sources */,
+				7830EA8D1C3ADE200059DC06 /* PSDBytes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +434,9 @@
 			files = (
 				7876B93F1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93D1C3443A90016ABF2 /* ByteArray.swift in Sources */,
+				7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9411C3443A90016ABF2 /* Endian.swift in Sources */,
+				7830EA8E1C3ADE200059DC06 /* PSDBytes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +697,7 @@
 				7876B9121C3442120016ABF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7876B9131C3442120016ABF2 /* Build configuration list for PBXNativeTarget "psdiOSTest" */ = {
 			isa = XCConfigurationList;
@@ -653,6 +706,7 @@
 				7876B9151C3442120016ABF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7876B92C1C34426D0016ABF2 /* Build configuration list for PBXNativeTarget "psdOSX" */ = {
 			isa = XCConfigurationList;
@@ -661,6 +715,7 @@
 				7876B92E1C34426D0016ABF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7876B92F1C34426D0016ABF2 /* Build configuration list for PBXNativeTarget "psdOSXTests" */ = {
 			isa = XCConfigurationList;
@@ -669,6 +724,7 @@
 				7876B9311C34426D0016ABF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
