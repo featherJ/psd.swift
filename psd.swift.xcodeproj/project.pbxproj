@@ -11,6 +11,12 @@
 		7830EA8E1C3ADE200059DC06 /* PSDBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */; };
 		7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
 		7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
+		783C42981C3C131E006A424A /* AbstractLazyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C42971C3C131E006A424A /* AbstractLazyParser.swift */; };
+		783C42991C3C131E006A424A /* AbstractLazyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C42971C3C131E006A424A /* AbstractLazyParser.swift */; };
+		783C429B1C3C19D3006A424A /* ChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C429A1C3C19D3006A424A /* ChannelInfo.swift */; };
+		783C429C1C3C19D3006A424A /* ChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C429A1C3C19D3006A424A /* ChannelInfo.swift */; };
+		783C429E1C3C1C27006A424A /* ChannelRenderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C429D1C3C1C27006A424A /* ChannelRenderData.swift */; };
+		783C429F1C3C1C27006A424A /* ChannelRenderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C429D1C3C1C27006A424A /* ChannelRenderData.swift */; };
 		7876B9071C3442120016ABF2 /* psd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B8FC1C3442120016ABF2 /* psd.framework */; };
 		7876B90C1C3442120016ABF2 /* psd_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876B90B1C3442120016ABF2 /* psd_swiftTests.swift */; };
 		7876B9251C34426D0016ABF2 /* psd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B91B1C34426D0016ABF2 /* psd.framework */; };
@@ -50,6 +56,9 @@
 /* Begin PBXFileReference section */
 		7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDBytes.swift; sourceTree = "<group>"; };
 		7830EA901C3AF1B80059DC06 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		783C42971C3C131E006A424A /* AbstractLazyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractLazyParser.swift; sourceTree = "<group>"; };
+		783C429A1C3C19D3006A424A /* ChannelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelInfo.swift; sourceTree = "<group>"; };
+		783C429D1C3C1C27006A424A /* ChannelRenderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelRenderData.swift; sourceTree = "<group>"; };
 		7876B8FC1C3442120016ABF2 /* psd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = psd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7876B9061C3442120016ABF2 /* psdiOSTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = psdiOSTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7876B90B1C3442120016ABF2 /* psd_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = psd_swiftTests.swift; sourceTree = "<group>"; };
@@ -127,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */,
+				783C42971C3C131E006A424A /* AbstractLazyParser.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -134,6 +144,8 @@
 		7830EA8B1C3ADE0A0059DC06 /* infos */ = {
 			isa = PBXGroup;
 			children = (
+				783C429A1C3C19D3006A424A /* ChannelInfo.swift */,
+				783C429D1C3C1C27006A424A /* ChannelRenderData.swift */,
 			);
 			path = infos;
 			sourceTree = "<group>";
@@ -412,10 +424,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783C42981C3C131E006A424A /* AbstractLazyParser.swift in Sources */,
 				7876B93E1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93C1C3443A90016ABF2 /* ByteArray.swift in Sources */,
 				7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9401C3443A90016ABF2 /* Endian.swift in Sources */,
+				783C429E1C3C1C27006A424A /* ChannelRenderData.swift in Sources */,
+				783C429B1C3C19D3006A424A /* ChannelInfo.swift in Sources */,
 				7830EA8D1C3ADE200059DC06 /* PSDBytes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,10 +447,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783C42991C3C131E006A424A /* AbstractLazyParser.swift in Sources */,
 				7876B93F1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93D1C3443A90016ABF2 /* ByteArray.swift in Sources */,
 				7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9411C3443A90016ABF2 /* Endian.swift in Sources */,
+				783C429F1C3C1C27006A424A /* ChannelRenderData.swift in Sources */,
+				783C429C1C3C19D3006A424A /* ChannelInfo.swift in Sources */,
 				7830EA8E1C3ADE200059DC06 /* PSDBytes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
