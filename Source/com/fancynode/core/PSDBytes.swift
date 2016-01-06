@@ -11,13 +11,13 @@ import Foundation
  用于读取psd文件二进制数据的扩展。<p>A ext for reading binary data from psd file.
  - author: featherJ
  */
-class PSDBytes : ByteArray {
+public class PSDBytes : ByteArray {
 	/**
 	 从中当前位置读取指定长度的字节数组。<br><br>Reads the specified length of the byte array from the current position
 	 - parameter length: length 指定长度 | specified length
 	 - returns: 读取出的子字节数组 | Sub byte array
 	 */
-	func read(length: Int) -> PSDBytes {
+	public func read(length: Int) -> PSDBytes {
 		let bytes: PSDBytes = PSDBytes() ;
 		readBytes(bytes, 0, length) ;
 		return bytes;
@@ -30,7 +30,7 @@ class PSDBytes : ByteArray {
 	 - returns: 字符串<br><br>
 	 string
 	 */
-	func readString(var length: Int = -1) -> String {
+	public func readString(var length: Int = -1) -> String {
 		if (length == -1) {
 			length = Int(readUnsignedByte()) ;
 		}
@@ -45,7 +45,7 @@ class PSDBytes : ByteArray {
 	 - returns: 字符串<br><br>
 	 string
 	 */
-	func readUnicodeString(var length: Int = -1) -> String {
+	public func readUnicodeString(var length: Int = -1) -> String {
 		if (length == -1) {
 			length = readInt() ;
 		}
@@ -61,7 +61,7 @@ class PSDBytes : ByteArray {
 	 - returns: 路径浮点<br><br>
 	 Path number
 	 */
-	func readPathNumber() -> Double {
+	public func readPathNumber() -> Double {
 		let a: Int = readByte() ;
 		let b1: Int = readByte() << 16;
 		let b2: Int = readByte() << 8;
@@ -75,7 +75,7 @@ class PSDBytes : ByteArray {
 	 - returns: 颜色空间和颜色值对象<br><br>
 	 space color object.
 	 */
-	func readSpaceColor() -> AnyObject {
+	public func readSpaceColor() -> AnyObject {
 		let colorSpace: Int = readShort() ;
 		var colorComponent: [Int] = [] ;
 		for (var i: Int = 0;i < 4;i++) {

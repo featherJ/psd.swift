@@ -6,7 +6,7 @@
 // Copyright © 2016年 fancynode. All rights reserved.
 //
 
-extension String {
+public extension String {
 	/**
 	 返回一个字符串，该字符串由参数中的 Unicode 字符代码所表示的字符组成。<br><br>
 	 Returns a string comprising the characters represented by the Unicode character codes in the parameters.

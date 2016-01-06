@@ -14,22 +14,22 @@ import zlib
  The ByteArray class provides methods and properties to optimize reading, writing, and working with binary data.
  - author: featherJ
  */
-class ByteArray {
-	var data: NSMutableData;
+public class ByteArray {
+	internal var data: NSMutableData;
 	/**s
 	 更改或读取数据的字节顺序；Endian.BIG_ENDIAN 或 Endian.LITTLE_ENDIAN。默认值为 BIG_ENDIAN。<br><br>
 	 Changes or reads the byte order for the data; either Endian.BIG_ENDIAN or Endian.LITTLE_ENDIAN. The default value is BIG_ENDIAN.
 	 */
-	var endian: String;
+	public var endian: String;
 	/**
 	 将文件指针的当前位置（以字节为单位）移动或返回到 ByteArray 对象中。下一次调用读取方法时将在此位置开始读取，或者下一次调用写入方法时将在此位置开始写入。<br><br>
 	 Moves, or returns the current position, in bytes, of the file pointer into the ByteArray object. This is the point at which the next call to a read method starts reading or a write method starts writing.
 	 */
-	var position: Int;
+	public var position: Int;
 	/**
 	 [只读]可从字节数组的当前位置到数组末尾读取的数据的字节数。每次访问 ByteArray 对象时，将 bytesAvailable 属性与读取方法结合使用，以确保读取有效的数据。<br><br>
 	 [read-only] The number of bytes of data available for reading from the current position in the byte array to the end of the array. Use the bytesAvailable property in conjunction with the read methods each time you access a ByteArray object to ensure that you are reading valid data.*/
-	var bytesAvailable: Int {
+	public var bytesAvailable: Int {
 		get {
 			return self.length - self.position;
 		}
@@ -42,7 +42,7 @@ class ByteArray {
 	 If the length is set to a value that is larger than the current length, the right side of the byte array is filled with zeros.<p>
 	 If the length is set to a value that is smaller than the current length, the byte array is truncated.
 	 */
-	var length: Int {
+	public var length: Int {
 		get {
 			return self.data.length;
 		}
@@ -55,17 +55,17 @@ class ByteArray {
 	}
 	
 	private var range: NSRange
-	init() {
+	public init() {
 		data = NSMutableData() ;
 		endian = Endian.BIG_ENDIAN;
 		range = NSRange(location: 0, length: 0)
 		position = 0;
 	}
-	convenience init(_ data: NSData) {
+	public convenience init(_ data: NSData) {
 		self.init() ;
 		self.data.appendData(data) ;
 	}
-	convenience init(_ data: [UInt8]) {
+	public convenience init(_ data: [UInt8]) {
 		self.init() ;
 		self.data.appendBytes(data, length: data.count)
 	}
@@ -75,7 +75,7 @@ class ByteArray {
 	 - returns: 如果字节不为零，则返回 true，否则返回 false。<br><br>
 	 Returns true if the byte is nonzero, false otherwise.
 	 */
-	func readBoolean() -> Bool {
+	public func readBoolean() -> Bool {
 		range.location = position
 		range.length = 1
 		var flag = false
@@ -91,7 +91,7 @@ class ByteArray {
 	 - returns: 介于 -128 和 127 之间的 8 位带符号整数。<br><br>
 	 An 8-bit signed integer between -128 and 127.
 	 */
-	func readByte() -> Int {
+	public func readByte() -> Int {
 		range.location = position
 		range.length = 1
 		var value: Int8 = 0
@@ -107,7 +107,7 @@ class ByteArray {
 	 - returns: 介于 0 和 255 之间的 8 位无符号整数。<br><br>
 	 A 8-bit unsigned integer between 0 and 255.
 	 */
-	func readUnsignedByte() -> UInt {
+	public func readUnsignedByte() -> UInt {
 		range.location = position
 		range.length = 1
 		var value: UInt8 = 0
@@ -123,7 +123,7 @@ class ByteArray {
 	 - returns: 介于 -32768 和 32767 之间的 16 位带符号整数。<br><br>
 	 A 16-bit signed integer between -32768 and 32767.
 	 */
-	func readShort() -> Int {
+	public func readShort() -> Int {
 		range.location = position
 		range.length = 2
 		var value: Int16 = 0
@@ -139,7 +139,7 @@ class ByteArray {
 	 - returns: 介于 0 和 65535 之间的 16 位无符号整数。<br><br>
 	 A 16-bit unsigned integer between 0 and 65535.
 	 */
-	func readUnsignedShort() -> UInt {
+	public func readUnsignedShort() -> UInt {
 		range.location = position
 		range.length = 2
 		var value: UInt16 = 0
@@ -155,7 +155,7 @@ class ByteArray {
 	 - returns: 介于 -2147483648 和 2147483647 之间的 32 位带符号整数。<br><br>
 	 A 32-bit signed integer between -2147483648 and 2147483647.
 	 */
-	func readInt() -> Int {
+	public func readInt() -> Int {
 		range.location = position
 		range.length = 4
 		var value: Int32 = 0
@@ -171,7 +171,7 @@ class ByteArray {
 	 - returns: 介于 0 和 4294967295 之间的 32 位无符号整数。<br><br>
 	 A 32-bit unsigned integer between 0 and 4294967295.
 	 */
-	func readUnsignedInt() -> UInt {
+	public func readUnsignedInt() -> UInt {
 		range.location = position
 		range.length = 4
 		var value: UInt32 = 0
@@ -187,7 +187,7 @@ class ByteArray {
 	 - returns: 介于 -2^63 和 2^63-1 之间的 64 位带符号整数。<br><br>
 	 A 64-bit signed integer between -2^63 and 2^63-1.
 	 */
-	func readInt64() -> Int64 {
+	public func readInt64() -> Int64 {
 		range.location = position
 		range.length = 8
 		var value: Int64 = 0
@@ -203,7 +203,7 @@ class ByteArray {
 	 - returns: 介于 0 和 2^64 之间的 64 位无符号整数。<br><br>
 	 A 64-bit unsigned integer between 0 and 2^64.
 	 */
-	func readUnsignedInt64() -> UInt64 {
+	public func readUnsignedInt64() -> UInt64 {
 		range.location = position
 		range.length = 8
 		var value: UInt64 = 0
@@ -219,7 +219,7 @@ class ByteArray {
 	 - parameter value: 确定写入哪个字节的布尔值。如果该参数为 true，则该方法写入 1；如果该参数为 false，则该方法写入 0。<br><br>
 	 A Boolean value determining which byte is written. If the parameter is true, the method writes a 1; if false, the method writes a 0.
 	 */
-	func writeBoolean(var value: Bool) {
+	public func writeBoolean(var value: Bool) {
 		range.location = position
 		range.length = 1
 		self.data.replaceBytesInRange(range, withBytes: &value)
@@ -233,7 +233,7 @@ class ByteArray {
 	 - parameter value: 一个 32 位整数。低 8 位将被写入字节流。<br><br>
 	 A 32-bit integer. The low 8 bits are written to the byte stream.
 	 */
-	func writeByte(value: Int) {
+	public func writeByte(value: Int) {
 		var realValue: UInt8 = UInt8(value&0xff) ;
 		range.location = position
 		range.length = 1
@@ -246,7 +246,7 @@ class ByteArray {
 	 - parameter value: 32 位整数，该整数的低 16 位将被写入字节流。<br><br>
 	 32-bit integer, whose low 16 bits are written to the byte stream.
 	 */
-	func writeShort(value: Int) {
+	public func writeShort(value: Int) {
 		var realValue: UInt16 = UInt16(value&0xffff)
 		if (endian == Endian.BIG_ENDIAN) {
 			realValue = realValue.bigEndian
@@ -262,7 +262,7 @@ class ByteArray {
 	 - parameter value: 要写入字节流的整数。<br><br>
 	 An integer to write to the byte stream.
 	 */
-	func writeInt(var value: Int) {
+	public func writeInt(var value: Int) {
 		if (endian == Endian.BIG_ENDIAN) {
 			value = value.bigEndian
 		}
@@ -277,7 +277,7 @@ class ByteArray {
 	 - parameter value: 要写入字节流的无符号整数。<br><br>
 	 An unsigned integer to write to the byte stream.
 	 */
-	func writeUnsignedInt(var value: UInt) {
+	public func writeUnsignedInt(var value: UInt) {
 		if (endian == Endian.BIG_ENDIAN) {
 			value = value.bigEndian
 		}
@@ -292,7 +292,7 @@ class ByteArray {
 	 - parameter value: 要写入字节流的整数。<br><br>
 	 An integer to write to the byte stream.
 	 */
-	func writeInt64(var value: Int64) {
+	public func writeInt64(var value: Int64) {
 		if (endian == Endian.BIG_ENDIAN) {
 			value = value.bigEndian
 		}
@@ -307,7 +307,7 @@ class ByteArray {
 	 - parameter value: 要写入字节流的无符号整数。<br><br>
 	 An unsigned integer to write to the byte stream.
 	 */
-	func writeUnsignedInt64(var value: UInt64) {
+	public func writeUnsignedInt64(var value: UInt64) {
 		if (endian == Endian.BIG_ENDIAN) {
 			value = value.bigEndian
 		}
@@ -324,7 +324,7 @@ class ByteArray {
 	 - returns: 双精度（64 位）浮点数。<br><br>
 	 A double-precision (64-bit) floating-point number.
 	 */
-	func readDouble() -> Double {
+	public func readDouble() -> Double {
 		range.location = position
 		range.length = 8
 		var value: Double = 0.0
@@ -345,7 +345,7 @@ class ByteArray {
 	 - returns: 单精度（32 位）浮点数。<br><br>
 	 A single-precision (32-bit) floating-point number.
 	 */
-	func readFloat() -> Float32 {
+	public func readFloat() -> Float32 {
 		range.location = position
 		range.length = 4
 		var value: Float32 = 0.0
@@ -366,7 +366,7 @@ class ByteArray {
 	 - parameter value: 双精度（64 位）浮点数。<br><br>
 	 A double-precision (64-bit) floating-point number.
 	 */
-	func writeDouble(var value: Double) {
+	public func writeDouble(var value: Double) {
 		range.location = position
 		range.length = 8
 		if (endian == Endian.BIG_ENDIAN) {
@@ -387,7 +387,7 @@ class ByteArray {
 	 - parameter value: 单精度（32 位）浮点数。<br><br>
 	 A single-precision (32-bit) floating-point number.
 	 */
-	func writeFloat(var value: Float32) {
+	public func writeFloat(var value: Float32) {
 		range.location = position
 		range.length = 4
 		if (endian == Endian.BIG_ENDIAN) {
@@ -414,7 +414,7 @@ class ByteArray {
 	 - parameter length: 要读取的字节数。默认值 0 导致读取所有可用的数据。<br><br>
 	 The number of bytes to read. The default value of 0 causes all available data to be read.
 	 */
-	func readBytes(bytes: ByteArray, _ offset: Int = 0, var _ length: Int = 0) {
+	public func readBytes(bytes: ByteArray, _ offset: Int = 0, var _ length: Int = 0) {
 		length = (length == 0) ? bytesAvailable : min(length, bytesAvailable)
 		if (length <= 0) {
 			return
@@ -445,7 +445,7 @@ class ByteArray {
 	 - parameter length: 一个无符号整数，表示在缓冲区中的写入范围。<br><br>
 	 An unsigned integer indicating how far into the buffer to write.
 	 */
-	func writeBytes(bytes: ByteArray, _ offset: Int = 0, var _ length: Int = 0) {
+	public func writeBytes(bytes: ByteArray, _ offset: Int = 0, var _ length: Int = 0) {
 		length = length == 0 ? bytesAvailable : min(length, bytesAvailable)
 		if (length > 0) {
 			let data = bytes.self.data.subdataWithRange(NSRange(location: offset, length: length))
@@ -470,7 +470,7 @@ class ByteArray {
 	 - returns: UTF-8 编码的字符串。<br><br>
 	 UTF-8 encoded string.
 	 */
-	func readMultiByte(length: Int, _ charSet: CFStringEncoding) -> String {
+	public func readMultiByte(length: Int, _ charSet: CFStringEncoding) -> String {
 		range.location = position
 		range.length = length
 		let encoding = CFStringConvertEncodingToNSStringEncoding(charSet)
@@ -484,7 +484,7 @@ class ByteArray {
 	 - returns: UTF-8 编码的字符串。<br><br>
 	 UTF-8 encoded string.
 	 */
-	func readUTF() -> String {
+	public func readUTF() -> String {
 		return readUTFBytes(Int(readShort()))
 	}
 	/**
@@ -495,7 +495,7 @@ class ByteArray {
 	 - returns: 由指定长度的 UTF-8 字节组成的字符串。<br><br>
 	 A string composed of the UTF-8 bytes of the specified length.
 	 */
-	func readUTFBytes(length: Int) -> String {
+	public func readUTFBytes(length: Int) -> String {
 		range.location = position
 		range.length = length
 		let value = NSString(data: self.data.subdataWithRange(range), encoding: NSUTF8StringEncoding) as! String
@@ -510,7 +510,7 @@ class ByteArray {
 	 - parameter charSet: 表示要使用的字符集的字符串。<br><br>
 	 The string denoting the character set to use.
 	 */
-	func writeMultiByte(value: String, _ charSet: CFStringEncoding) {
+	public func writeMultiByte(value: String, _ charSet: CFStringEncoding) {
 		let encoding = CFStringConvertEncodingToNSStringEncoding(charSet)
 		let data = NSString(string: value).dataUsingEncoding(encoding)!
 		var bytes = [UInt8](count: data.length, repeatedValue: 0)
@@ -526,7 +526,7 @@ class ByteArray {
 	 - parameter value: 要写入的字符串值。<br><br>
 	 The string value to be written.
 	 */
-	func writeUTF(value: String) {
+	public func writeUTF(value: String) {
 		var num = UInt16(value.utf8.count)
 		if (endian == Endian.BIG_ENDIAN) {
 			num = num.bigEndian
@@ -543,7 +543,7 @@ class ByteArray {
 	 - parameter value: 要写入的字符串值。<br><br>
 	 The string value to be written.
 	 */
-	func writeUTFBytes(value: String) {
+	public func writeUTFBytes(value: String) {
 		var bytes = [UInt8](value.utf8)
 		range.location = position
 		range.length = bytes.count
@@ -553,10 +553,10 @@ class ByteArray {
 	
 	
 	
-	func readObject() -> Any {
+	public func readObject() -> Any {
 		return {}
 	}
-	func writeObject(object: Any) {
+	public func writeObject(object: Any) {
 		
 	}
 	
@@ -568,7 +568,7 @@ class ByteArray {
 	 - parameter algorithm: 压缩时所用的压缩算法。有效值定义为 CompressionAlgorithm 类中的常量。默认情况下使用 zlib 格式。调用 compress( CompressionAlgorithm.DEFLATE) 与调用 deflate() 方法效果相同。<br><br>
 	 The compression algorithm to use when compressing. Valid values are defined as constants in the CompressionAlgorithm class. The default is to use zlib format. Calling compress(CompressionAlgorithm.DEFLATE) has the same effect as calling the deflate() method.
 	 */
-	func compress(algorithm: String = "zlib") {
+	public func compress(algorithm: String = "zlib") {
 		if (algorithm == CompressionAlgorithm.DEFLATE) {
 			doDeflate(true)
 		} else if (algorithm == CompressionAlgorithm.ZLIB) {
@@ -586,7 +586,7 @@ class ByteArray {
 	 - parameter algorithm: 解压缩时要使用的压缩算法。它必须是用于压缩该数据的相同的压缩算法。有效值定义为 CompressionAlgorithm 类中的常量。默认情况下使用 zlib 格式。<br><br>
 	 The compression algorithm to use when decompressing. This must be the same compression algorithm used to compress the data. Valid values are defined as constants in the CompressionAlgorithm class. The default is to use zlib format.
 	 */
-	func uncompress(algorithm: String = "zlib") {
+	public func uncompress(algorithm: String = "zlib") {
 		if (algorithm == CompressionAlgorithm.DEFLATE) {
 			doDeflate(false)
 		} else if (algorithm == CompressionAlgorithm.ZLIB) {
@@ -602,7 +602,7 @@ class ByteArray {
 	 Compresses the byte array using the deflate compression algorithm. The entire byte array is compressed.<p>
 	 After the call, the length property of the ByteArray is set to the new length. The position property is set to the end of the byte array.
 	 */
-	func deflate() {
+	public func deflate() {
 		doDeflate(true)
 		position = length
 	}
@@ -612,7 +612,7 @@ class ByteArray {
 	 Decompresses the byte array using the deflate compression algorithm. The byte array must have been compressed using the same algorithm.<p>
 	 After the call, the length property of the ByteArray is set to the new length. The position property is set to 0.
 	 */
-	func inflate() {
+	public func inflate() {
 		doDeflate(false)
 		position = 0
 	}
@@ -707,7 +707,7 @@ class ByteArray {
 	
 	
 	
-	subscript(index: Int) -> UInt8 {
+	public subscript(index: Int) -> UInt8 {
 		get {
 			var value: UInt8 = 0
 			self.data.getBytes(&value, range: NSRange(location: index, length: 1))
@@ -722,7 +722,7 @@ class ByteArray {
 	 清除字节数组的内容，并将 length 和 position 属性重置为 0。明确调用此方法将释放 ByteArray 实例占用的内存。<br><br>
 	 Clears the contents of the byte array and resets the length and position properties to 0. Calling this method explicitly frees up the memory used by the ByteArray instance.
 	 */
-	func clear() {
+	public func clear() {
 		length = 0;
 	}
 	
@@ -732,7 +732,7 @@ class ByteArray {
 	 - returns:  字节数组的字符串表示形式。<br><br>
 	 The string representation of the byte array.
 	 */
-	func toString() -> String {
+	public func toString() -> String {
 		var str: String = "";
 		for (var i: Int = 0;i < self.length;i++) {
 			str += String.fromCharCode(UInt(self[i])) ;

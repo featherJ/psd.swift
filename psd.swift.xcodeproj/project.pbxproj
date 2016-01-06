@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7830EA8D1C3ADE200059DC06 /* PSDBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */; };
-		7830EA8E1C3ADE200059DC06 /* PSDBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */; };
 		7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
 		7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
-		783C42981C3C131E006A424A /* AbstractLazyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C42971C3C131E006A424A /* AbstractLazyParser.swift */; };
-		783C42991C3C131E006A424A /* AbstractLazyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C42971C3C131E006A424A /* AbstractLazyParser.swift */; };
+		783A664B1C3D7717002A494F /* AbstractLazyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A663C1C3D7717002A494F /* AbstractLazyParser.swift */; };
+		783A664C1C3D7717002A494F /* AbstractLazyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A663C1C3D7717002A494F /* AbstractLazyParser.swift */; };
+		783A664D1C3D7717002A494F /* PSDBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A663D1C3D7717002A494F /* PSDBytes.swift */; };
+		783A664E1C3D7717002A494F /* PSDBytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A663D1C3D7717002A494F /* PSDBytes.swift */; };
+		783A66541C3D7EB6002A494F /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A66531C3D7EB6002A494F /* Header.swift */; };
+		783A66551C3D7EB6002A494F /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A66531C3D7EB6002A494F /* Header.swift */; };
+		783A66571C3D82D2002A494F /* ColorModeConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A66561C3D82D2002A494F /* ColorModeConsts.swift */; };
+		783A66581C3D82D2002A494F /* ColorModeConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A66561C3D82D2002A494F /* ColorModeConsts.swift */; };
+		783A665A1C3D8485002A494F /* FileVersionConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A66591C3D8485002A494F /* FileVersionConsts.swift */; };
+		783A665B1C3D8485002A494F /* FileVersionConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A66591C3D8485002A494F /* FileVersionConsts.swift */; };
 		783C429B1C3C19D3006A424A /* ChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C429A1C3C19D3006A424A /* ChannelInfo.swift */; };
 		783C429C1C3C19D3006A424A /* ChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C429A1C3C19D3006A424A /* ChannelInfo.swift */; };
 		783C429E1C3C1C27006A424A /* ChannelRenderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783C429D1C3C1C27006A424A /* ChannelRenderData.swift */; };
@@ -54,9 +60,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDBytes.swift; sourceTree = "<group>"; };
 		7830EA901C3AF1B80059DC06 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
-		783C42971C3C131E006A424A /* AbstractLazyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractLazyParser.swift; sourceTree = "<group>"; };
+		783A663C1C3D7717002A494F /* AbstractLazyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractLazyParser.swift; sourceTree = "<group>"; };
+		783A663D1C3D7717002A494F /* PSDBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDBytes.swift; sourceTree = "<group>"; };
+		783A66531C3D7EB6002A494F /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		783A66561C3D82D2002A494F /* ColorModeConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModeConsts.swift; sourceTree = "<group>"; };
+		783A66591C3D8485002A494F /* FileVersionConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileVersionConsts.swift; sourceTree = "<group>"; };
 		783C429A1C3C19D3006A424A /* ChannelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelInfo.swift; sourceTree = "<group>"; };
 		783C429D1C3C1C27006A424A /* ChannelRenderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelRenderData.swift; sourceTree = "<group>"; };
 		7876B8FC1C3442120016ABF2 /* psd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = psd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,19 +135,15 @@
 		7830EA891C3ADE0A0059DC06 /* fancynode */ = {
 			isa = PBXGroup;
 			children = (
-				7830EA8A1C3ADE0A0059DC06 /* core */,
+				783A663B1C3D7717002A494F /* core */,
 				7830EA8B1C3ADE0A0059DC06 /* infos */,
+				783A66411C3D7717002A494F /* nodes */,
+				783A66421C3D7717002A494F /* renderer */,
+				783A66441C3D7717002A494F /* secitions */,
+				783A66491C3D7717002A494F /* structure */,
+				783A664A1C3D7717002A494F /* utils */,
 			);
 			path = fancynode;
-			sourceTree = "<group>";
-		};
-		7830EA8A1C3ADE0A0059DC06 /* core */ = {
-			isa = PBXGroup;
-			children = (
-				7830EA8C1C3ADE200059DC06 /* PSDBytes.swift */,
-				783C42971C3C131E006A424A /* AbstractLazyParser.swift */,
-			);
-			path = core;
 			sourceTree = "<group>";
 		};
 		7830EA8B1C3ADE0A0059DC06 /* infos */ = {
@@ -156,6 +161,93 @@
 				7830EA901C3AF1B80059DC06 /* StringExtension.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		783A663B1C3D7717002A494F /* core */ = {
+			isa = PBXGroup;
+			children = (
+				783A663C1C3D7717002A494F /* AbstractLazyParser.swift */,
+				783A663D1C3D7717002A494F /* PSDBytes.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		783A66411C3D7717002A494F /* nodes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = nodes;
+			sourceTree = "<group>";
+		};
+		783A66421C3D7717002A494F /* renderer */ = {
+			isa = PBXGroup;
+			children = (
+				783A66431C3D7717002A494F /* channelDataRenderer */,
+			);
+			path = renderer;
+			sourceTree = "<group>";
+		};
+		783A66431C3D7717002A494F /* channelDataRenderer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = channelDataRenderer;
+			sourceTree = "<group>";
+		};
+		783A66441C3D7717002A494F /* secitions */ = {
+			isa = PBXGroup;
+			children = (
+				783A66451C3D7717002A494F /* header */,
+				783A66461C3D7717002A494F /* imageData */,
+				783A66471C3D7717002A494F /* layerAndMask */,
+				783A66481C3D7717002A494F /* resource */,
+			);
+			path = secitions;
+			sourceTree = "<group>";
+		};
+		783A66451C3D7717002A494F /* header */ = {
+			isa = PBXGroup;
+			children = (
+				783A66531C3D7EB6002A494F /* Header.swift */,
+				783A66561C3D82D2002A494F /* ColorModeConsts.swift */,
+				783A66591C3D8485002A494F /* FileVersionConsts.swift */,
+			);
+			path = header;
+			sourceTree = "<group>";
+		};
+		783A66461C3D7717002A494F /* imageData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = imageData;
+			sourceTree = "<group>";
+		};
+		783A66471C3D7717002A494F /* layerAndMask */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = layerAndMask;
+			sourceTree = "<group>";
+		};
+		783A66481C3D7717002A494F /* resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		783A66491C3D7717002A494F /* structure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = structure;
+			sourceTree = "<group>";
+		};
+		783A664A1C3D7717002A494F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		7876B8F21C3442120016ABF2 = {
@@ -424,14 +516,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783C42981C3C131E006A424A /* AbstractLazyParser.swift in Sources */,
+				783A66571C3D82D2002A494F /* ColorModeConsts.swift in Sources */,
+				783A664B1C3D7717002A494F /* AbstractLazyParser.swift in Sources */,
+				783A66541C3D7EB6002A494F /* Header.swift in Sources */,
 				7876B93E1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93C1C3443A90016ABF2 /* ByteArray.swift in Sources */,
 				7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9401C3443A90016ABF2 /* Endian.swift in Sources */,
+				783A665A1C3D8485002A494F /* FileVersionConsts.swift in Sources */,
 				783C429E1C3C1C27006A424A /* ChannelRenderData.swift in Sources */,
 				783C429B1C3C19D3006A424A /* ChannelInfo.swift in Sources */,
-				7830EA8D1C3ADE200059DC06 /* PSDBytes.swift in Sources */,
+				783A664D1C3D7717002A494F /* PSDBytes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,14 +542,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				783C42991C3C131E006A424A /* AbstractLazyParser.swift in Sources */,
+				783A66581C3D82D2002A494F /* ColorModeConsts.swift in Sources */,
+				783A664C1C3D7717002A494F /* AbstractLazyParser.swift in Sources */,
+				783A66551C3D7EB6002A494F /* Header.swift in Sources */,
 				7876B93F1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93D1C3443A90016ABF2 /* ByteArray.swift in Sources */,
 				7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9411C3443A90016ABF2 /* Endian.swift in Sources */,
+				783A665B1C3D8485002A494F /* FileVersionConsts.swift in Sources */,
 				783C429F1C3C1C27006A424A /* ChannelRenderData.swift in Sources */,
 				783C429C1C3C19D3006A424A /* ChannelInfo.swift in Sources */,
-				7830EA8E1C3ADE200059DC06 /* PSDBytes.swift in Sources */,
+				783A664E1C3D7717002A494F /* PSDBytes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

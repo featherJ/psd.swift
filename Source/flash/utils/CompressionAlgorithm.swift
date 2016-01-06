@@ -11,16 +11,16 @@
  The CompressionAlgorithm class defines string constants for the names of compress and uncompress options. These constants are used as values of the algorithm parameter of the ByteArray.compress() and ByteArray.uncompress() methods.
  - author: featherJ
  */
-class CompressionAlgorithm
+public class CompressionAlgorithm
 {
 	/**
 	 定义用于 deflate 压缩算法的字符串。<br><br>
 	 Defines the string to use for the deflate compression algorithm.
 	 */
-	static let DEFLATE : String = "deflate";
+	public static let DEFLATE : String = "deflate";
 	/**
 	 定义用于 zlib 压缩算法的字符串。<br><br>
 	 Defines the string to use for the zlib compression algorithm.
 	 */
-	static let ZLIB: String = "zlib";
+	public static let ZLIB: String = "zlib";
 }

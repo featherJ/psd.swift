@@ -10,7 +10,7 @@
  懒解析抽象底层。<br><br>Lazily parser abstract class.
  - author: featherJ
  */
-class AbstractLazyParser {
+public class AbstractLazyParser {
 	
 	/**
 	 文件的二进制数据<br><br>
@@ -36,7 +36,7 @@ class AbstractLazyParser {
 	 伪解析，实际为跳过该数据块。<br><br>
 	 Pseudo parse, the actual to skip the data block.
 	 */
-	final internal func parse() {
+	final public func parse() {
 		if (lazyEnabled) {
 			fileBytes!.position += length;
 		}
