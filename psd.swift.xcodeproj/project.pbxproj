@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782E65991C434F0B005655D0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65981C434F0B005655D0 /* Logger.swift */; };
+		782E659A1C434F0B005655D0 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65981C434F0B005655D0 /* Logger.swift */; };
+		782E659E1C437E7B005655D0 /* RAWParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E659D1C437E7B005655D0 /* RAWParser.swift */; };
+		782E659F1C437E7B005655D0 /* RAWParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E659D1C437E7B005655D0 /* RAWParser.swift */; };
+		782E65A11C437E89005655D0 /* RLEParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A01C437E89005655D0 /* RLEParser.swift */; };
+		782E65A21C437E89005655D0 /* RLEParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A01C437E89005655D0 /* RLEParser.swift */; };
+		782E65A41C437EAD005655D0 /* ZIPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A31C437EAD005655D0 /* ZIPParser.swift */; };
+		782E65A51C437EAD005655D0 /* ZIPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A31C437EAD005655D0 /* ZIPParser.swift */; };
+		782E65A71C437EBA005655D0 /* LayerZIPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A61C437EBA005655D0 /* LayerZIPParser.swift */; };
+		782E65A81C437EBA005655D0 /* LayerZIPParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A61C437EBA005655D0 /* LayerZIPParser.swift */; };
+		782E65AA1C437EC7005655D0 /* LayerRLEParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A91C437EC7005655D0 /* LayerRLEParser.swift */; };
+		782E65AB1C437EC7005655D0 /* LayerRLEParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65A91C437EC7005655D0 /* LayerRLEParser.swift */; };
+		782E65AD1C437ED2005655D0 /* LayerRAWParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65AC1C437ED2005655D0 /* LayerRAWParser.swift */; };
+		782E65AE1C437ED2005655D0 /* LayerRAWParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E65AC1C437ED2005655D0 /* LayerRAWParser.swift */; };
 		7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
 		7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
 		783A664B1C3D7717002A494F /* AbstractLazyParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A663C1C3D7717002A494F /* AbstractLazyParser.swift */; };
@@ -40,6 +54,20 @@
 		7876B9491C3444780016ABF2 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B9481C3444780016ABF2 /* libcompression.tbd */; };
 		7876B94C1C3445100016ABF2 /* zlib in Resources */ = {isa = PBXBuildFile; fileRef = 7876B94B1C3445100016ABF2 /* zlib */; };
 		7876B94D1C3445100016ABF2 /* zlib in Resources */ = {isa = PBXBuildFile; fileRef = 7876B94B1C3445100016ABF2 /* zlib */; };
+		78A472C01C3FB0C200AD5ADE /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A472BF1C3FB0C200AD5ADE /* ImageData.swift */; };
+		78A472C11C3FB0C700AD5ADE /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A472BF1C3FB0C200AD5ADE /* ImageData.swift */; };
+		78E347D81C44035300787F7A /* LayerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347D71C44035300787F7A /* LayerRecord.swift */; };
+		78E347D91C44035300787F7A /* LayerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347D71C44035300787F7A /* LayerRecord.swift */; };
+		78E347E11C44063D00787F7A /* AdditionalLayerInfoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347DE1C44063D00787F7A /* AdditionalLayerInfoBase.swift */; };
+		78E347E21C44063D00787F7A /* AdditionalLayerInfoBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347DE1C44063D00787F7A /* AdditionalLayerInfoBase.swift */; };
+		78E347E31C44063D00787F7A /* IAdditionalLayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347DF1C44063D00787F7A /* IAdditionalLayerInfo.swift */; };
+		78E347E41C44063D00787F7A /* IAdditionalLayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347DF1C44063D00787F7A /* IAdditionalLayerInfo.swift */; };
+		78E347E61C44066000787F7A /* AdditionalLayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347E51C44066000787F7A /* AdditionalLayerInfo.swift */; };
+		78E347E71C44066000787F7A /* AdditionalLayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347E51C44066000787F7A /* AdditionalLayerInfo.swift */; };
+		78E347E91C4407EE00787F7A /* PsdUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347E81C4407EE00787F7A /* PsdUtil.swift */; };
+		78E347EA1C4407EE00787F7A /* PsdUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E347E81C4407EE00787F7A /* PsdUtil.swift */; };
+		78E3481A1C44215000787F7A /* AdditionalLayerInforFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E348191C44215000787F7A /* AdditionalLayerInforFactory.swift */; };
+		78E3481B1C44215000787F7A /* AdditionalLayerInforFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E348191C44215000787F7A /* AdditionalLayerInforFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +88,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		782E65981C434F0B005655D0 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		782E659D1C437E7B005655D0 /* RAWParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAWParser.swift; sourceTree = "<group>"; };
+		782E65A01C437E89005655D0 /* RLEParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLEParser.swift; sourceTree = "<group>"; };
+		782E65A31C437EAD005655D0 /* ZIPParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZIPParser.swift; sourceTree = "<group>"; };
+		782E65A61C437EBA005655D0 /* LayerZIPParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerZIPParser.swift; sourceTree = "<group>"; };
+		782E65A91C437EC7005655D0 /* LayerRLEParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerRLEParser.swift; sourceTree = "<group>"; };
+		782E65AC1C437ED2005655D0 /* LayerRAWParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerRAWParser.swift; sourceTree = "<group>"; };
 		7830EA901C3AF1B80059DC06 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		783A663C1C3D7717002A494F /* AbstractLazyParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractLazyParser.swift; sourceTree = "<group>"; };
 		783A663D1C3D7717002A494F /* PSDBytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PSDBytes.swift; sourceTree = "<group>"; };
@@ -84,6 +119,13 @@
 		7876B9461C3444710016ABF2 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		7876B9481C3444780016ABF2 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libcompression.tbd; sourceTree = DEVELOPER_DIR; };
 		7876B94B1C3445100016ABF2 /* zlib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = zlib; sourceTree = "<group>"; };
+		78A472BF1C3FB0C200AD5ADE /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		78E347D71C44035300787F7A /* LayerRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerRecord.swift; sourceTree = "<group>"; };
+		78E347DE1C44063D00787F7A /* AdditionalLayerInfoBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalLayerInfoBase.swift; sourceTree = "<group>"; };
+		78E347DF1C44063D00787F7A /* IAdditionalLayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAdditionalLayerInfo.swift; sourceTree = "<group>"; };
+		78E347E51C44066000787F7A /* AdditionalLayerInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalLayerInfo.swift; sourceTree = "<group>"; };
+		78E347E81C4407EE00787F7A /* PsdUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsdUtil.swift; sourceTree = "<group>"; };
+		78E348191C44215000787F7A /* AdditionalLayerInforFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalLayerInforFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +166,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		782E659B1C437E63005655D0 /* additionalLayerInfo */ = {
+			isa = PBXGroup;
+			children = (
+				78E347DD1C44063D00787F7A /* core */,
+				78E347E01C44063D00787F7A /* infos */,
+				78E347E51C44066000787F7A /* AdditionalLayerInfo.swift */,
+				78E348191C44215000787F7A /* AdditionalLayerInforFactory.swift */,
+			);
+			path = additionalLayerInfo;
+			sourceTree = "<group>";
+		};
+		782E659C1C437E63005655D0 /* channelParsers */ = {
+			isa = PBXGroup;
+			children = (
+				782E659D1C437E7B005655D0 /* RAWParser.swift */,
+				782E65A01C437E89005655D0 /* RLEParser.swift */,
+				782E65A31C437EAD005655D0 /* ZIPParser.swift */,
+				782E65A61C437EBA005655D0 /* LayerZIPParser.swift */,
+				782E65A91C437EC7005655D0 /* LayerRLEParser.swift */,
+				782E65AC1C437ED2005655D0 /* LayerRAWParser.swift */,
+			);
+			path = channelParsers;
+			sourceTree = "<group>";
+		};
 		7830EA881C3ADE0A0059DC06 /* com */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +284,7 @@
 		783A66461C3D7717002A494F /* imageData */ = {
 			isa = PBXGroup;
 			children = (
+				78A472BF1C3FB0C200AD5ADE /* ImageData.swift */,
 			);
 			path = imageData;
 			sourceTree = "<group>";
@@ -225,6 +292,9 @@
 		783A66471C3D7717002A494F /* layerAndMask */ = {
 			isa = PBXGroup;
 			children = (
+				782E659B1C437E63005655D0 /* additionalLayerInfo */,
+				782E659C1C437E63005655D0 /* channelParsers */,
+				78E347D71C44035300787F7A /* LayerRecord.swift */,
 			);
 			path = layerAndMask;
 			sourceTree = "<group>";
@@ -246,6 +316,8 @@
 		783A664A1C3D7717002A494F /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				782E65981C434F0B005655D0 /* Logger.swift */,
+				78E347E81C4407EE00787F7A /* PsdUtil.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -336,6 +408,22 @@
 				7876B9441C3443E70016ABF2 /* libz.tbd */,
 			);
 			name = OSXLibraries;
+			sourceTree = "<group>";
+		};
+		78E347DD1C44063D00787F7A /* core */ = {
+			isa = PBXGroup;
+			children = (
+				78E347DE1C44063D00787F7A /* AdditionalLayerInfoBase.swift */,
+				78E347DF1C44063D00787F7A /* IAdditionalLayerInfo.swift */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		78E347E01C44063D00787F7A /* infos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = infos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,17 +604,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E347D81C44035300787F7A /* LayerRecord.swift in Sources */,
 				783A66571C3D82D2002A494F /* ColorModeConsts.swift in Sources */,
 				783A664B1C3D7717002A494F /* AbstractLazyParser.swift in Sources */,
 				783A66541C3D7EB6002A494F /* Header.swift in Sources */,
 				7876B93E1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93C1C3443A90016ABF2 /* ByteArray.swift in Sources */,
+				782E659E1C437E7B005655D0 /* RAWParser.swift in Sources */,
 				7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9401C3443A90016ABF2 /* Endian.swift in Sources */,
+				78E347E61C44066000787F7A /* AdditionalLayerInfo.swift in Sources */,
 				783A665A1C3D8485002A494F /* FileVersionConsts.swift in Sources */,
+				782E65A11C437E89005655D0 /* RLEParser.swift in Sources */,
+				782E65A41C437EAD005655D0 /* ZIPParser.swift in Sources */,
+				78E347E91C4407EE00787F7A /* PsdUtil.swift in Sources */,
+				782E65AD1C437ED2005655D0 /* LayerRAWParser.swift in Sources */,
 				783C429E1C3C1C27006A424A /* ChannelRenderData.swift in Sources */,
+				782E65AA1C437EC7005655D0 /* LayerRLEParser.swift in Sources */,
+				782E65991C434F0B005655D0 /* Logger.swift in Sources */,
+				78E3481A1C44215000787F7A /* AdditionalLayerInforFactory.swift in Sources */,
 				783C429B1C3C19D3006A424A /* ChannelInfo.swift in Sources */,
 				783A664D1C3D7717002A494F /* PSDBytes.swift in Sources */,
+				78E347E11C44063D00787F7A /* AdditionalLayerInfoBase.swift in Sources */,
+				78A472C01C3FB0C200AD5ADE /* ImageData.swift in Sources */,
+				78E347E31C44063D00787F7A /* IAdditionalLayerInfo.swift in Sources */,
+				782E65A71C437EBA005655D0 /* LayerZIPParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,17 +644,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E347D91C44035300787F7A /* LayerRecord.swift in Sources */,
 				783A66581C3D82D2002A494F /* ColorModeConsts.swift in Sources */,
 				783A664C1C3D7717002A494F /* AbstractLazyParser.swift in Sources */,
 				783A66551C3D7EB6002A494F /* Header.swift in Sources */,
 				7876B93F1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7876B93D1C3443A90016ABF2 /* ByteArray.swift in Sources */,
+				782E659F1C437E7B005655D0 /* RAWParser.swift in Sources */,
 				7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				7876B9411C3443A90016ABF2 /* Endian.swift in Sources */,
+				78E347E71C44066000787F7A /* AdditionalLayerInfo.swift in Sources */,
 				783A665B1C3D8485002A494F /* FileVersionConsts.swift in Sources */,
+				782E65A21C437E89005655D0 /* RLEParser.swift in Sources */,
+				782E65A51C437EAD005655D0 /* ZIPParser.swift in Sources */,
+				78E347EA1C4407EE00787F7A /* PsdUtil.swift in Sources */,
+				782E65AE1C437ED2005655D0 /* LayerRAWParser.swift in Sources */,
 				783C429F1C3C1C27006A424A /* ChannelRenderData.swift in Sources */,
+				782E65AB1C437EC7005655D0 /* LayerRLEParser.swift in Sources */,
+				782E659A1C434F0B005655D0 /* Logger.swift in Sources */,
+				78E3481B1C44215000787F7A /* AdditionalLayerInforFactory.swift in Sources */,
 				783C429C1C3C19D3006A424A /* ChannelInfo.swift in Sources */,
 				783A664E1C3D7717002A494F /* PSDBytes.swift in Sources */,
+				78E347E21C44063D00787F7A /* AdditionalLayerInfoBase.swift in Sources */,
+				78A472C11C3FB0C700AD5ADE /* ImageData.swift in Sources */,
+				78E347E41C44063D00787F7A /* IAdditionalLayerInfo.swift in Sources */,
+				782E65A81C437EBA005655D0 /* LayerZIPParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

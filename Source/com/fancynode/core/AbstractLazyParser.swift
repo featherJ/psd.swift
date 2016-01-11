@@ -16,7 +16,7 @@ public class AbstractLazyParser {
 	 文件的二进制数据<br><br>
 	 The bytes of psd file
 	 */
-	internal var fileBytes: PSDBytes?;
+	internal var fileBytes: PSDBytes;
 	/**
 	 总长度<br><br>
 	 Total length
@@ -26,19 +26,22 @@ public class AbstractLazyParser {
 	 起始位置<br><br>
 	 The start position
 	 */
-	internal var startPos: Int = 0;;
+	internal var startPos: Int = 0;
 	/**
 	 启动懒加载<br><br>
 	 Enalbed lazy parse
 	 */
 	internal var lazyEnabled: Bool = true;
+	public init(_ bytes: PSDBytes) {
+		self.fileBytes = bytes;
+	}
 	/**
 	 伪解析，实际为跳过该数据块。<br><br>
 	 Pseudo parse, the actual to skip the data block.
 	 */
 	final public func parse() {
 		if (lazyEnabled) {
-			fileBytes!.position += length;
+			fileBytes.position += length;
 		}
 		else {
 			doParse() ;
@@ -69,9 +72,9 @@ public class AbstractLazyParser {
 			return;
 		}
 		parsed = true;
-		let currentPos: Int = fileBytes!.position;
-		fileBytes!.position = startPos;
+		let currentPos: Int = fileBytes.position;
+		fileBytes.position = startPos;
 		doParse() ;
-		fileBytes!.position = currentPos;
+		fileBytes.position = currentPos;
 	}
 }

@@ -27,18 +27,18 @@ public class ChannelRenderData {
 	 */
 	public var startPostions: [UInt] = [] ;
 	
-	private var _numChannels: Int = 0;
+	private var _numChannels: UInt = 0;
 	/**
 	 通道的数量<br><br>
 	 The number of channels.
 	 */
-	public var numChannels: Int {
+	public var numChannels: UInt {
 		get {
 			return self._numChannels;
 		}
 		set {
 			self._numChannels = newValue;
-			for (var i = 0;i < self._numChannels;i++) {
+			for (var i:UInt = 0;i < self._numChannels;i++) {
 				startPostions.append(0) ;
 			}
 		}
@@ -50,27 +50,27 @@ public class ChannelRenderData {
 	 <li>3: rgb
 	 <li>4: cmyk
 	 */
-	public var mode: Int = 3;
+	public var mode: UInt = 3;
 	/**
 	 图像宽度<br><br>
 	 The width of iamge
 	 */
-	public var width: Int = 0;
+	public var width: UInt = 0;
 	/**
 	 图像高度<br><br>
 	 The height of iamge
 	 */
-	public var height: Int = 0;;
+	public var height: UInt = 0;;
 	/**
 	 图像深度<br><br>
 	 The depth of iamge
 	 */
-	public var depth: Int = 0;
+	public var depth: UInt = 0;
 	/**
 	 像素扫描间隔<br><br>
 	 The step to scan the pixels.
 	 */
-	public var pixelStep: Int {
+	public var pixelStep: UInt {
 		get {
 			return depth == 8 ? 1 : 2;
 		}
