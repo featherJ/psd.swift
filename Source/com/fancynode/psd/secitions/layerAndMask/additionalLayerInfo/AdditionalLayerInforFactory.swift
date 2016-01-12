@@ -19,17 +19,17 @@ class AdditionalLayerInforFactory {
 	/** 初始化信息表 | Initialise the information map. */
 	private static func initSelf()
 	{
-		if (inited) {
-			return
-		}
+		if (inited) {return;}
 		inited = true;
+		register(BlackWhite.key,BlackWhite.self);
+		register(BlendClippingElements.key,BlendClippingElements.self);
 	}
 	/**
 	 注册一个key和附加信息类。<br> Register a Information class with key
 	 - parameter key:     要注册的key <br> The key to register
 	 - parameter infoCls: 要注册的信息类 <br> The information class to register.
 	 */
-	private static func register(key: String, infoCls: AnyClass) {
+	private static func register(key: String,_ infoCls: AnyClass) {
 		let keys = key.characters.split {$0 == ","}.map(String.init)
 		for key in keys
 		{
@@ -42,8 +42,7 @@ class AdditionalLayerInforFactory {
 	 - parameter key: 指定的key <br> The given key.
 	 - returns: 信息实例 <br> The instance of additional information.
 	 */
-	static func create(key: String) -> IAdditionalLayerInfo?
-	{
+	static func create(key: String) -> IAdditionalLayerInfo?{
 		initSelf() ;
 		let cls: AnyClass? = infoMap[key] ;
 		if (cls != nil) {
