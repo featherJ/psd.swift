@@ -118,6 +118,30 @@
 		7876B9491C3444780016ABF2 /* libcompression.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B9481C3444780016ABF2 /* libcompression.tbd */; };
 		7876B94C1C3445100016ABF2 /* zlib in Resources */ = {isa = PBXBuildFile; fileRef = 7876B94B1C3445100016ABF2 /* zlib */; };
 		7876B94D1C3445100016ABF2 /* zlib in Resources */ = {isa = PBXBuildFile; fileRef = 7876B94B1C3445100016ABF2 /* zlib */; };
+		78AEB2C31C46BD4900A7890E /* InstrBoolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2B71C46BD4900A7890E /* InstrBoolean.swift */; };
+		78AEB2C41C46BD4900A7890E /* InstrBoolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2B71C46BD4900A7890E /* InstrBoolean.swift */; };
+		78AEB2C51C46BD4900A7890E /* InstrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2B81C46BD4900A7890E /* InstrEmpty.swift */; };
+		78AEB2C61C46BD4900A7890E /* InstrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2B81C46BD4900A7890E /* InstrEmpty.swift */; };
+		78AEB2C71C46BD4900A7890E /* InstrMultiLineArrayEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2B91C46BD4900A7890E /* InstrMultiLineArrayEnd.swift */; };
+		78AEB2C81C46BD4900A7890E /* InstrMultiLineArrayEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2B91C46BD4900A7890E /* InstrMultiLineArrayEnd.swift */; };
+		78AEB2C91C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift */; };
+		78AEB2CA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift */; };
+		78AEB2CB1C46BD4900A7890E /* InstrNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BB1C46BD4900A7890E /* InstrNumber.swift */; };
+		78AEB2CC1C46BD4900A7890E /* InstrNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BB1C46BD4900A7890E /* InstrNumber.swift */; };
+		78AEB2CD1C46BD4900A7890E /* InstrNumberWithDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BC1C46BD4900A7890E /* InstrNumberWithDecimal.swift */; };
+		78AEB2CE1C46BD4900A7890E /* InstrNumberWithDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BC1C46BD4900A7890E /* InstrNumberWithDecimal.swift */; };
+		78AEB2CF1C46BD4900A7890E /* InstrObjectEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BD1C46BD4900A7890E /* InstrObjectEnd.swift */; };
+		78AEB2D01C46BD4900A7890E /* InstrObjectEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BD1C46BD4900A7890E /* InstrObjectEnd.swift */; };
+		78AEB2D11C46BD4900A7890E /* InstrObjectStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BE1C46BD4900A7890E /* InstrObjectStart.swift */; };
+		78AEB2D21C46BD4900A7890E /* InstrObjectStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BE1C46BD4900A7890E /* InstrObjectStart.swift */; };
+		78AEB2D31C46BD4900A7890E /* InstrProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BF1C46BD4900A7890E /* InstrProperty.swift */; };
+		78AEB2D41C46BD4900A7890E /* InstrProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2BF1C46BD4900A7890E /* InstrProperty.swift */; };
+		78AEB2D51C46BD4900A7890E /* InstrPropertyWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2C01C46BD4900A7890E /* InstrPropertyWithData.swift */; };
+		78AEB2D61C46BD4900A7890E /* InstrPropertyWithData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2C01C46BD4900A7890E /* InstrPropertyWithData.swift */; };
+		78AEB2D71C46BD4900A7890E /* InstrSingleLineArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2C11C46BD4900A7890E /* InstrSingleLineArray.swift */; };
+		78AEB2D81C46BD4900A7890E /* InstrSingleLineArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2C11C46BD4900A7890E /* InstrSingleLineArray.swift */; };
+		78AEB2D91C46BD4900A7890E /* InstrString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2C21C46BD4900A7890E /* InstrString.swift */; };
+		78AEB2DA1C46BD4900A7890E /* InstrString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AEB2C21C46BD4900A7890E /* InstrString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +225,18 @@
 		7876B9461C3444710016ABF2 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
 		7876B9481C3444780016ABF2 /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/lib/libcompression.tbd; sourceTree = DEVELOPER_DIR; };
 		7876B94B1C3445100016ABF2 /* zlib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = zlib; sourceTree = "<group>"; };
+		78AEB2B71C46BD4900A7890E /* InstrBoolean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrBoolean.swift; sourceTree = "<group>"; };
+		78AEB2B81C46BD4900A7890E /* InstrEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrEmpty.swift; sourceTree = "<group>"; };
+		78AEB2B91C46BD4900A7890E /* InstrMultiLineArrayEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrMultiLineArrayEnd.swift; sourceTree = "<group>"; };
+		78AEB2BA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrMultiLineArrayStart.swift; sourceTree = "<group>"; };
+		78AEB2BB1C46BD4900A7890E /* InstrNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrNumber.swift; sourceTree = "<group>"; };
+		78AEB2BC1C46BD4900A7890E /* InstrNumberWithDecimal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrNumberWithDecimal.swift; sourceTree = "<group>"; };
+		78AEB2BD1C46BD4900A7890E /* InstrObjectEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrObjectEnd.swift; sourceTree = "<group>"; };
+		78AEB2BE1C46BD4900A7890E /* InstrObjectStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrObjectStart.swift; sourceTree = "<group>"; };
+		78AEB2BF1C46BD4900A7890E /* InstrProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrProperty.swift; sourceTree = "<group>"; };
+		78AEB2C01C46BD4900A7890E /* InstrPropertyWithData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrPropertyWithData.swift; sourceTree = "<group>"; };
+		78AEB2C11C46BD4900A7890E /* InstrSingleLineArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrSingleLineArray.swift; sourceTree = "<group>"; };
+		78AEB2C21C46BD4900A7890E /* InstrString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +476,18 @@
 		781235DE1C45380900985ED6 /* instructions */ = {
 			isa = PBXGroup;
 			children = (
+				78AEB2B71C46BD4900A7890E /* InstrBoolean.swift */,
+				78AEB2B81C46BD4900A7890E /* InstrEmpty.swift */,
+				78AEB2B91C46BD4900A7890E /* InstrMultiLineArrayEnd.swift */,
+				78AEB2BA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift */,
+				78AEB2BB1C46BD4900A7890E /* InstrNumber.swift */,
+				78AEB2BC1C46BD4900A7890E /* InstrNumberWithDecimal.swift */,
+				78AEB2BD1C46BD4900A7890E /* InstrObjectEnd.swift */,
+				78AEB2BE1C46BD4900A7890E /* InstrObjectStart.swift */,
+				78AEB2BF1C46BD4900A7890E /* InstrProperty.swift */,
+				78AEB2C01C46BD4900A7890E /* InstrPropertyWithData.swift */,
+				78AEB2C11C46BD4900A7890E /* InstrSingleLineArray.swift */,
+				78AEB2C21C46BD4900A7890E /* InstrString.swift */,
 				78448C181C455B4C0073B5B0 /* AbstractInstruction.swift */,
 			);
 			path = instructions;
@@ -738,6 +786,7 @@
 			files = (
 				781235D51C4537DC00985ED6 /* LayerRecord.swift in Sources */,
 				781235B31C4537DC00985ED6 /* Curves.swift in Sources */,
+				78AEB2C51C46BD4900A7890E /* InstrEmpty.swift in Sources */,
 				781235A11C4537DC00985ED6 /* IAdditionalLayerInfo.swift in Sources */,
 				7876B93E1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7812358D1C4537DC00985ED6 /* PSDBytes.swift in Sources */,
@@ -745,25 +794,34 @@
 				7876B93C1C3443A90016ABF2 /* ByteArray.swift in Sources */,
 				7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				781235BD1C4537DC00985ED6 /* HueSaturation.swift in Sources */,
+				78AEB2D11C46BD4900A7890E /* InstrObjectStart.swift in Sources */,
+				78AEB2CF1C46BD4900A7890E /* InstrObjectEnd.swift in Sources */,
 				781235C31C4537DC00985ED6 /* LayerNameSource.swift in Sources */,
+				78AEB2C91C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */,
 				781235B51C4537DC00985ED6 /* Exposure.swift in Sources */,
 				781235A31C4537DC00985ED6 /* BlackWhite.swift in Sources */,
 				781235BB1C4537DC00985ED6 /* GradientMap.swift in Sources */,
 				781235C91C4537DC00985ED6 /* LayerRAWParser.swift in Sources */,
 				781235A91C4537DC00985ED6 /* BrightnessContrast.swift in Sources */,
+				78AEB2D31C46BD4900A7890E /* InstrProperty.swift in Sources */,
 				781235A71C4537DC00985ED6 /* BlendInteriorElements.swift in Sources */,
 				781235B91C4537DC00985ED6 /* GradientFill.swift in Sources */,
+				78AEB2CD1C46BD4900A7890E /* InstrNumberWithDecimal.swift in Sources */,
+				78AEB2D91C46BD4900A7890E /* InstrString.swift in Sources */,
 				781235951C4537DC00985ED6 /* FileVersionConsts.swift in Sources */,
 				781235B71C4537DC00985ED6 /* FillOpacity.swift in Sources */,
 				781235BF1C4537DC00985ED6 /* Invert.swift in Sources */,
 				781235CF1C4537DC00985ED6 /* RAWParser.swift in Sources */,
+				78AEB2C31C46BD4900A7890E /* InstrBoolean.swift in Sources */,
 				781235971C4537DC00985ED6 /* Header.swift in Sources */,
 				781235DB1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
 				7812358B1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
 				781235D91C4537DC00985ED6 /* Logger.swift in Sources */,
 				78448C191C455B4C0073B5B0 /* AbstractInstruction.swift in Sources */,
+				78AEB2D51C46BD4900A7890E /* InstrPropertyWithData.swift in Sources */,
 				78448C131C45525D0073B5B0 /* EngineData.swift in Sources */,
 				781235C11C4537DC00985ED6 /* LayerID.swift in Sources */,
+				78AEB2CB1C46BD4900A7890E /* InstrNumber.swift in Sources */,
 				78448C1F1C457C6D0073B5B0 /* RegExp.swift in Sources */,
 				781235911C4537DC00985ED6 /* ChannelRenderData.swift in Sources */,
 				781235D71C4537DC00985ED6 /* Descriptor.swift in Sources */,
@@ -776,10 +834,12 @@
 				7812359F1C4537DC00985ED6 /* AdditionalLayerInfoBase.swift in Sources */,
 				781235A51C4537DC00985ED6 /* BlendClippingElements.swift in Sources */,
 				781235AD1C4537DC00985ED6 /* ColorBalance.swift in Sources */,
+				78AEB2C71C46BD4900A7890E /* InstrMultiLineArrayEnd.swift in Sources */,
 				7812358F1C4537DC00985ED6 /* ChannelInfo.swift in Sources */,
 				781235B11C4537DC00985ED6 /* ContentGenerator.swift in Sources */,
 				781235D11C4537DC00985ED6 /* RLEParser.swift in Sources */,
 				781235931C4537DC00985ED6 /* ColorModeConsts.swift in Sources */,
+				78AEB2D71C46BD4900A7890E /* InstrSingleLineArray.swift in Sources */,
 				78448C161C4552BD0073B5B0 /* TextLines.swift in Sources */,
 				781235C71C4537DC00985ED6 /* TypeTool.swift in Sources */,
 				7876B9401C3443A90016ABF2 /* Endian.swift in Sources */,
@@ -803,6 +863,7 @@
 			files = (
 				781235D61C4537DC00985ED6 /* LayerRecord.swift in Sources */,
 				781235B41C4537DC00985ED6 /* Curves.swift in Sources */,
+				78AEB2C61C46BD4900A7890E /* InstrEmpty.swift in Sources */,
 				781235A21C4537DC00985ED6 /* IAdditionalLayerInfo.swift in Sources */,
 				7876B93F1C3443A90016ABF2 /* CompressionAlgorithm.swift in Sources */,
 				7812358E1C4537DC00985ED6 /* PSDBytes.swift in Sources */,
@@ -810,25 +871,34 @@
 				7876B93D1C3443A90016ABF2 /* ByteArray.swift in Sources */,
 				7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				781235BE1C4537DC00985ED6 /* HueSaturation.swift in Sources */,
+				78AEB2D21C46BD4900A7890E /* InstrObjectStart.swift in Sources */,
+				78AEB2D01C46BD4900A7890E /* InstrObjectEnd.swift in Sources */,
 				781235C41C4537DC00985ED6 /* LayerNameSource.swift in Sources */,
+				78AEB2CA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */,
 				781235B61C4537DC00985ED6 /* Exposure.swift in Sources */,
 				781235A41C4537DC00985ED6 /* BlackWhite.swift in Sources */,
 				781235BC1C4537DC00985ED6 /* GradientMap.swift in Sources */,
 				781235CA1C4537DC00985ED6 /* LayerRAWParser.swift in Sources */,
 				781235AA1C4537DC00985ED6 /* BrightnessContrast.swift in Sources */,
+				78AEB2D41C46BD4900A7890E /* InstrProperty.swift in Sources */,
 				781235A81C4537DC00985ED6 /* BlendInteriorElements.swift in Sources */,
 				781235BA1C4537DC00985ED6 /* GradientFill.swift in Sources */,
+				78AEB2CE1C46BD4900A7890E /* InstrNumberWithDecimal.swift in Sources */,
+				78AEB2DA1C46BD4900A7890E /* InstrString.swift in Sources */,
 				781235961C4537DC00985ED6 /* FileVersionConsts.swift in Sources */,
 				781235B81C4537DC00985ED6 /* FillOpacity.swift in Sources */,
 				781235C01C4537DC00985ED6 /* Invert.swift in Sources */,
 				781235D01C4537DC00985ED6 /* RAWParser.swift in Sources */,
+				78AEB2C41C46BD4900A7890E /* InstrBoolean.swift in Sources */,
 				781235981C4537DC00985ED6 /* Header.swift in Sources */,
 				781235DC1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
 				7812358C1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
 				781235DA1C4537DC00985ED6 /* Logger.swift in Sources */,
 				78448C1A1C455B4C0073B5B0 /* AbstractInstruction.swift in Sources */,
+				78AEB2D61C46BD4900A7890E /* InstrPropertyWithData.swift in Sources */,
 				78448C141C45525D0073B5B0 /* EngineData.swift in Sources */,
 				781235C21C4537DC00985ED6 /* LayerID.swift in Sources */,
+				78AEB2CC1C46BD4900A7890E /* InstrNumber.swift in Sources */,
 				78448C201C457C6D0073B5B0 /* RegExp.swift in Sources */,
 				781235921C4537DC00985ED6 /* ChannelRenderData.swift in Sources */,
 				781235D81C4537DC00985ED6 /* Descriptor.swift in Sources */,
@@ -841,10 +911,12 @@
 				781235A01C4537DC00985ED6 /* AdditionalLayerInfoBase.swift in Sources */,
 				781235A61C4537DC00985ED6 /* BlendClippingElements.swift in Sources */,
 				781235AE1C4537DC00985ED6 /* ColorBalance.swift in Sources */,
+				78AEB2C81C46BD4900A7890E /* InstrMultiLineArrayEnd.swift in Sources */,
 				781235901C4537DC00985ED6 /* ChannelInfo.swift in Sources */,
 				781235B21C4537DC00985ED6 /* ContentGenerator.swift in Sources */,
 				781235D21C4537DC00985ED6 /* RLEParser.swift in Sources */,
 				781235941C4537DC00985ED6 /* ColorModeConsts.swift in Sources */,
+				78AEB2D81C46BD4900A7890E /* InstrSingleLineArray.swift in Sources */,
 				78448C171C4552BD0073B5B0 /* TextLines.swift in Sources */,
 				781235C81C4537DC00985ED6 /* TypeTool.swift in Sources */,
 				7876B9411C3443A90016ABF2 /* Endian.swift in Sources */,
