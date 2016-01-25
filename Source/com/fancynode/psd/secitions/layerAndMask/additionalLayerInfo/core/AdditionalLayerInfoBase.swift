@@ -21,7 +21,7 @@ public class AdditionalLayerInfoBase: IAdditionalLayerInfo {
 	/** 该模块的结束位置 <br> The end position of this section */
 	var infoEnd: Int = 0;
 	/** 解析后的附加数据 <br> The decoded data. */
-	var data: AnyObject?;
+	var data: AnyObject = [];
 	
 	required public init()
 	{
@@ -38,7 +38,6 @@ public class AdditionalLayerInfoBase: IAdditionalLayerInfo {
 		self.fileBytes = layer.fileBytes;
 		self.length = length;
 		self.infoEnd = fileBytes!.position + self.length;
-		self.data = [] ;
 	}
 	/**
 	 跳过该数据块<br>

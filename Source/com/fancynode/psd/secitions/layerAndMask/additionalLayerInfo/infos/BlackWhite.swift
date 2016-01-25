@@ -80,19 +80,19 @@ public class BlackWhite: AdditionalLayerInfoBase {
 		self.fileBytes!.position += 4;
 		self.data = Descriptor.read(fileBytes!) ;
 
-		self._red = self.data!["Rd "] as! Int;
-		self._yellow = self.data!["Yllw"] as! Int
-		self._green = self.data!["Grn "] as! Int
-		self._cyan = self.data!["Cyn "] as! Int
-		self._blue = self.data!["Bl "] as! Int
-		self._magenta = self.data!["Mgnt"] as! Int
-		self._tint = self.data!["useTint"] as! Int
+		self._red = self.data["Rd "] as! Int;
+		self._yellow = self.data["Yllw"] as! Int
+		self._green = self.data["Grn "] as! Int
+		self._cyan = self.data["Cyn "] as! Int
+		self._blue = self.data["Bl "] as! Int
+		self._magenta = self.data["Mgnt"] as! Int
+		self._tint = self.data["useTint"] as! Int
 		self._tintColor = [
-			"red": self.data!["tintColor"]!!["Rd "] as! Int,
-			"green": self.data!["tintColor"]!!["Grn "] as! Int,
-			"blue": self.data!["tintColor"]!!["Bl "] as! Int
+			"red": self.data["tintColor"]!!["Rd "] as! Int,
+			"green": self.data["tintColor"]!!["Grn "] as! Int,
+			"blue": self.data["tintColor"]!!["Bl "] as! Int
 		]
-		self._presetId = self.data!["bwPresetKind"] as! Int
-		self._presetName = self.data!["blackAndWhitePresetFileName"] as! Int
+		self._presetId = self.data["bwPresetKind"] as! Int
+		self._presetName = self.data["blackAndWhitePresetFileName"] as! Int
 	}
 }

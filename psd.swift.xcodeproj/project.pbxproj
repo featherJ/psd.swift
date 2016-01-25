@@ -91,6 +91,10 @@
 		781235DC1C4537DC00985ED6 /* PsdUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7812358A1C4537DC00985ED6 /* PsdUtil.swift */; };
 		7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
 		7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830EA901C3AF1B80059DC06 /* StringExtension.swift */; };
+		783889101C5693EE00417864 /* NSArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838890E1C5693EE00417864 /* NSArrayExtension.swift */; };
+		783889111C5693EE00417864 /* NSArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838890E1C5693EE00417864 /* NSArrayExtension.swift */; };
+		783889121C5693EE00417864 /* NSMutableArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838890F1C5693EE00417864 /* NSMutableArrayExtension.swift */; };
+		783889131C5693EE00417864 /* NSMutableArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7838890F1C5693EE00417864 /* NSMutableArrayExtension.swift */; };
 		78448C101C4538820073B5B0 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448C0F1C4538820073B5B0 /* StringUtil.swift */; };
 		78448C111C4538820073B5B0 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448C0F1C4538820073B5B0 /* StringUtil.swift */; };
 		78448C131C45525D0073B5B0 /* EngineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448C121C45525D0073B5B0 /* EngineData.swift */; };
@@ -204,6 +208,8 @@
 		781235891C4537DC00985ED6 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		7812358A1C4537DC00985ED6 /* PsdUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsdUtil.swift; sourceTree = "<group>"; };
 		7830EA901C3AF1B80059DC06 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		7838890E1C5693EE00417864 /* NSArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArrayExtension.swift; sourceTree = "<group>"; };
+		7838890F1C5693EE00417864 /* NSMutableArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableArrayExtension.swift; sourceTree = "<group>"; };
 		78448C0F1C4538820073B5B0 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		78448C121C45525D0073B5B0 /* EngineData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EngineData.swift; sourceTree = "<group>"; };
 		78448C151C4552BD0073B5B0 /* TextLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLines.swift; sourceTree = "<group>"; };
@@ -504,6 +510,8 @@
 		7830EA8F1C3AF17D0059DC06 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7838890E1C5693EE00417864 /* NSArrayExtension.swift */,
+				7838890F1C5693EE00417864 /* NSMutableArrayExtension.swift */,
 				7830EA901C3AF1B80059DC06 /* StringExtension.swift */,
 			);
 			path = extensions;
@@ -795,6 +803,7 @@
 				7830EA911C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				781235BD1C4537DC00985ED6 /* HueSaturation.swift in Sources */,
 				78AEB2D11C46BD4900A7890E /* InstrObjectStart.swift in Sources */,
+				783889101C5693EE00417864 /* NSArrayExtension.swift in Sources */,
 				78AEB2CF1C46BD4900A7890E /* InstrObjectEnd.swift in Sources */,
 				781235C31C4537DC00985ED6 /* LayerNameSource.swift in Sources */,
 				78AEB2C91C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */,
@@ -814,6 +823,7 @@
 				781235CF1C4537DC00985ED6 /* RAWParser.swift in Sources */,
 				78AEB2C31C46BD4900A7890E /* InstrBoolean.swift in Sources */,
 				781235971C4537DC00985ED6 /* Header.swift in Sources */,
+				783889121C5693EE00417864 /* NSMutableArrayExtension.swift in Sources */,
 				781235DB1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
 				7812358B1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
 				781235D91C4537DC00985ED6 /* Logger.swift in Sources */,
@@ -872,6 +882,7 @@
 				7830EA921C3AF1B80059DC06 /* StringExtension.swift in Sources */,
 				781235BE1C4537DC00985ED6 /* HueSaturation.swift in Sources */,
 				78AEB2D21C46BD4900A7890E /* InstrObjectStart.swift in Sources */,
+				783889111C5693EE00417864 /* NSArrayExtension.swift in Sources */,
 				78AEB2D01C46BD4900A7890E /* InstrObjectEnd.swift in Sources */,
 				781235C41C4537DC00985ED6 /* LayerNameSource.swift in Sources */,
 				78AEB2CA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */,
@@ -891,6 +902,7 @@
 				781235D01C4537DC00985ED6 /* RAWParser.swift in Sources */,
 				78AEB2C41C46BD4900A7890E /* InstrBoolean.swift in Sources */,
 				781235981C4537DC00985ED6 /* Header.swift in Sources */,
+				783889131C5693EE00417864 /* NSMutableArrayExtension.swift in Sources */,
 				781235DC1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
 				7812358C1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
 				781235DA1C4537DC00985ED6 /* Logger.swift in Sources */,

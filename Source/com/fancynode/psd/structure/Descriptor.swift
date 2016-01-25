@@ -24,8 +24,8 @@ public class Descriptor {
 	 - parameter bytes: 文件的二进制数据 <br> The bytes of psd file
 	 - returns: 解析结果 <br> The parsed object.
 	 */
-	public static func read(bytes: PSDBytes) ->  AnyObject {
-		return instance.parse(bytes) ;
+	public static func read(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
+		return Descriptor.instance.parse(bytes) ;
 	}
 	/**
 	 解析一个描述着，描述着通常是由一个类标识开始， 随后跟随舍一系列的项。<br>
@@ -33,8 +33,8 @@ public class Descriptor {
 	 - parameter bytes: 文件的二进制数据 <br> The bytes of psd file
 	 - returns: 解析结果 <br> The parsed object.
 	 */
-	public func parse(bytes: PSDBytes) -> AnyObject{
-		var data = [String: AnyObject]() ;
+	public func parse(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
+		var data = Dictionary<String, AnyObject>() ;
 		data["class"] = parseClass(bytes) ;
 		let numItems = bytes.readInt() ;
 		Logger.debug("Class = \(data["class"]) + Item count = \(numItems)") ;
@@ -47,7 +47,7 @@ public class Descriptor {
 		}
 		return data;
 	}
-	private func parseClass(bytes: PSDBytes) -> AnyObject {
+	private func parseClass(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
 		return [
 			"name": bytes.readUnicodeString(),
 			"id": parseId(bytes)
@@ -58,7 +58,7 @@ public class Descriptor {
 		let len = bytes.readInt() ;
 		return len == 0 ? bytes.readString(4) : bytes.readString(len) ;
 	}
-	private func parseKeyItem(bytes: PSDBytes) -> AnyObject
+	private func parseKeyItem(bytes: PSDBytes) -> Dictionary<String, AnyObject>
 	{
 		let id = parseId(bytes) ;
 		Logger.debug("Key = " + id) ;
@@ -98,7 +98,7 @@ public class Descriptor {
 			value = parseInteger(bytes) ;
 			break;
 		case "comp":
-			value = NSNumber(longLong:parseLargeInteger(bytes));
+			value = NSNumber(longLong: parseLargeInteger(bytes)) ;
 			break;
 		case "VlLs":
 			value = parseList(bytes) ;
@@ -127,10 +127,10 @@ public class Descriptor {
 		return value
 	}
 	
-	private func parseBoolean(bytes: PSDBytes)-> Bool{
+	private func parseBoolean(bytes: PSDBytes) -> Bool {
 		return bytes.readBoolean() ;
 	}
-	private func parseDouble(bytes: PSDBytes) -> Double{
+	private func parseDouble(bytes: PSDBytes) -> Double {
 		return bytes.readDouble() ;
 	}
 	private func parseInteger(bytes: PSDBytes) -> Int {
@@ -148,19 +148,19 @@ public class Descriptor {
 	private func parseOffset(bytes: PSDBytes) -> Int {
 		return bytes.readInt() ;
 	}
-	private func parseProperty(bytes: PSDBytes) -> AnyObject {
+	private func parseProperty(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
 		return [
 			"class": parseClass(bytes),
 			"id": parseId(bytes)
 		]
 	}
-	private func parseEnum(bytes: PSDBytes) -> AnyObject {
+	private func parseEnum(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
 		return [
 			"type": parseId(bytes),
 			"value": parseId(bytes)
 		]
 	}
-	private func parseEnumReference(bytes: PSDBytes) -> AnyObject
+	private func parseEnumReference(bytes: PSDBytes) -> Dictionary<String, AnyObject>
 	{
 		return [
 			"class": parseClass(bytes),
@@ -172,7 +172,7 @@ public class Descriptor {
 		let len = bytes.readInt() ;
 		return bytes.readString(len) ;
 	}
-	private func parseFilePath(bytes: PSDBytes) -> AnyObject {
+	private func parseFilePath(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
 		_ = bytes.readInt() ;
 		// Little-endian, because fuck the world.
 		let sig: String = bytes.readString(4) ;
@@ -192,7 +192,7 @@ public class Descriptor {
 		}
 		return items;
 	}
-	private func parseObjectArray(bytes: PSDBytes) -> AnyObject
+	private func parseObjectArray(bytes: PSDBytes) -> Dictionary<String, AnyObject>
 	{
 //		throw new Error("Object array not implemented yet") ;
 		let count = bytes.readInt() ;
@@ -201,7 +201,7 @@ public class Descriptor {
 		Logger.put(count) ;
 		Logger.put(itemInObj) ;
 		Logger.put(wat) ;
-		var obj = [String: AnyObject]() ;
+		var obj: Dictionary<String, AnyObject> = [String: AnyObject]() ;
 		for (var i = 0;i < count;i++)
 		{
 			let name: String = bytes.readString(bytes.readInt()) ;
@@ -214,12 +214,12 @@ public class Descriptor {
 		let len = bytes.readInt() ;
 		return bytes.read(len) ;
 	}
-	private func parseReference(bytes: PSDBytes) -> [AnyObject]
+	private func parseReference(bytes: PSDBytes) -> [Dictionary<String, AnyObject>]
 	{
 		let numItems = bytes.readInt() ;
-		var items: [AnyObject] = [] ;
+		var items: [Dictionary<String, AnyObject>] = [] ;
 		
-		for (var i = 0;i < numItems;i++){
+		for (var i = 0;i < numItems;i++) {
 			let type: String = bytes.readString(4) ;
 			Logger.debug("Reference type = " + type) ;
 			var value: AnyObject = []
@@ -253,7 +253,7 @@ public class Descriptor {
 		}
 		return items;
 	}
-	private func parseUnitDouble(bytes: PSDBytes) -> AnyObject {
+	private func parseUnitDouble(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
 		let unitId: String = bytes.readString(4) ;
 		var unit: String = "";
 		switch (unitId)
@@ -288,7 +288,7 @@ public class Descriptor {
 		let value = bytes.readDouble() ;
 		return ["id": unitId, "unit": unit, "value": value] ;
 	}
-	private func parseUnitFloat(bytes: PSDBytes) -> AnyObject {
+	private func parseUnitFloat(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
 		let unitId: String = bytes.readString(4) ;
 		var unit: String = "";
 		switch (unitId) {

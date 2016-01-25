@@ -29,37 +29,37 @@ public class ContentGenerator : AdditionalLayerInfoBase
 	
 	public var brightness: AnyObject {
 		get {
-			return self.data!["Brgh"]!!;
+			return self.data["Brgh"]!!;
 		}
 	}
 	
 	public var contrast: AnyObject {
 		get {
-			return self.data!["Cntr"]!!;
+			return self.data["Cntr"]!!;
 		}
 	}
 	
 	public var mean: AnyObject {
 		get {
-			return self.data!["means"]!!;
+			return self.data["means"]!!;
 		}
 	}
 	
 	public var lab: AnyObject {
 		get {
-			return self.data!["Lab "]!!;
+			return self.data["Lab "]!!;
 		}
 	}
 	
 	public var useLegacy: AnyObject {
 		get {
-			return self.data!["useLegacy"]!!;
+			return self.data["useLegacy"]!!;
 		}
 	}
 	
 	public var auto: AnyObject {
 		get {
-			return self.data!["Auto"]!!;
+			return self.data["Auto"]!!;
 		}
 	}
 }
