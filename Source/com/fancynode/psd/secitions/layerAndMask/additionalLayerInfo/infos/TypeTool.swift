@@ -86,7 +86,7 @@ public class TypeTool : AdditionalLayerInfoBase
 				{
 					let fontsets: NSArray = engineData["ResourceDict"]!["FontSet"] as! NSArray;
 					for (var i = 0;i < fontsets.count;i++) {
-						_fonts!.addObject(fontsets[i] ["Name"]!!) ;
+						_fonts!.push(fontsets[i] ["Name"]!!) ;
 					}
 				}
 			}
@@ -141,7 +141,7 @@ public class TypeTool : AdditionalLayerInfoBase
 					{
 						let paragraphSheet = runArray[i] ["ParagraphSheet"] as? NSDictionary
 						if (paragraphSheet != nil && paragraphSheet!["Properties"] != nil && paragraphSheet!["Properties"]!["Justification"] != nil) {
-							_alignment!.addObject(alignments[min(paragraphSheet!["Properties"]!["Justification"] as! Int, 3)]) ;
+							_alignment!.push(alignments[min(paragraphSheet!["Properties"]!["Justification"] as! Int, 3)]) ;
 						}
 					}
 				}
@@ -171,15 +171,15 @@ public class TypeTool : AdditionalLayerInfoBase
 						for (var j = 0;j < values.count;j++)
 						{
 							let value = round((values[j] as! Double) * 255.0) ;
-							newValues.addObject(value) ;
+							newValues.push(value) ;
 						}
-						newValues.addObject(newValues.firstObject!) ;// 将ARGB变为RGBA | Change ARGB -> RGBA for consistency
+						newValues.push(newValues.firstObject!) ;// 将ARGB变为RGBA | Change ARGB -> RGBA for consistency
 						newValues.removeObjectAtIndex(0) ;
-						_colors!.addObject(newValues) ;
+						_colors!.push(newValues) ;
 					}
 				}
 				if (_colors!.count == 0) {
-					_colors!.addObject([0, 0, 0, 255]) ;
+					_colors!.push([0, 0, 0, 255]) ;
 				}
 			}
 			return _colors!;
@@ -219,7 +219,7 @@ public class TypeTool : AdditionalLayerInfoBase
 					{
 						let StyleSheet: NSMutableDictionary? = runArray[i] ["StyleSheet"] as? NSMutableDictionary;
 						if (StyleSheet != nil && StyleSheet!["StyleSheetData"] != nil) {
-							datas.addObject(StyleSheet!["StyleSheetData"]!) ;
+							datas.push(StyleSheet!["StyleSheetData"]!) ;
 						}
 					}
 				}
@@ -230,7 +230,7 @@ public class TypeTool : AdditionalLayerInfoBase
 								m[key as! String] = NSMutableArray()
 							}
 							let arr: NSMutableArray = m[key as! String] as! NSMutableArray
-							arr.addObject(value) ;
+							arr.push(value) ;
 						}
 						return m;
 					}, initial: NSMutableDictionary(), arr: datas) ;
@@ -243,9 +243,9 @@ public class TypeTool : AdditionalLayerInfoBase
 		let newArr = NSMutableArray() ;
 		for (var i = 0;i < arr.count;i++) {
 			if (newArr.count == 0) {
-				newArr.addObject(arr[i]) ;
+				newArr.push(arr[i]) ;
 			} else {
-				newArr.addObject(arr[i]) ;
+				newArr.push(arr[i]) ;
 			}
 		}
 		return newArr;
@@ -284,12 +284,12 @@ public class TypeTool : AdditionalLayerInfoBase
 		] ;
 		let css = NSMutableArray() ;
 		for (key,value) in definition{
-			css.addObject(String(key) + ": " + String(value) + ";") ;
+			css.push(String(key) + ": " + String(value) + ";") ;
 		}
 		return  css.join("\n");
 	}
 	
-	private func parseTransformInfo()
+	internal func parseTransformInfo()
 	{
 		let currentData: NSMutableDictionary = data as! NSMutableDictionary;
 		currentData["transform"] = NSMutableDictionary(dictionary: [
