@@ -8,7 +8,7 @@
 
 import Foundation
 public class BlackWhite: AdditionalLayerInfoBase {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "blwh";
 		}

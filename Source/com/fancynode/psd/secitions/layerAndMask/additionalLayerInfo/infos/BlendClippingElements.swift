@@ -10,7 +10,7 @@ import Foundation
 
 public class BlendClippingElements : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "clbl";
 		}

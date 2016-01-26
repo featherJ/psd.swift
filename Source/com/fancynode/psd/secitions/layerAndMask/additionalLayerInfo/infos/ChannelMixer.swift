@@ -9,7 +9,7 @@
 import Foundation
 public class ChannelMixer : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "mixr";
 		}

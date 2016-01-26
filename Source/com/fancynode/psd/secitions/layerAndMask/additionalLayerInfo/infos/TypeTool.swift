@@ -14,7 +14,7 @@ import Foundation
  */
 public class TypeTool : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "TySh";
 		}

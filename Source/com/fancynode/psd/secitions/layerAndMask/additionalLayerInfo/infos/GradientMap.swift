@@ -9,7 +9,7 @@
 import Foundation
 public class GradientMap : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "grdm";
 		}
@@ -100,7 +100,7 @@ public class GradientMap : AdditionalLayerInfoBase
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		// Version
 		fileBytes!.position += 2;
 		
@@ -111,7 +111,7 @@ public class GradientMap : AdditionalLayerInfoBase
 		
 		var stops = fileBytes!.readShort() ;
 		_colorStops = [] ;
-		for (var i = 0;i < stops;i++){
+		for (var i = 0;i < stops;i++) {
 			_colorStops!.append([
 					"location": fileBytes!.readInt(),
 					"midpoint": fileBytes!.readInt(),
@@ -124,7 +124,7 @@ public class GradientMap : AdditionalLayerInfoBase
 		
 		stops = fileBytes!.readShort() ;
 		_transparencyStops = [] ;
-		for (var i = 0;i < stops;i++){
+		for (var i = 0;i < stops;i++) {
 			_transparencyStops!.append([
 					"location": fileBytes!.readInt(),
 					"midpoint": fileBytes!.readInt(),
@@ -133,10 +133,10 @@ public class GradientMap : AdditionalLayerInfoBase
 		}
 		
 		let expansionCount = fileBytes!.readShort() ;
-		if (expansionCount > 0){
+		if (expansionCount > 0) {
 			self._interpolation = fileBytes!.readShort() ;
 			let length = fileBytes!.readShort() ;
-			if (length >= 32){
+			if (length >= 32) {
 				self._mode = fileBytes!.readShort() ;
 				self._randomSeed = fileBytes!.readInt() ;
 				self._showingTransparency = fileBytes!.readShort() > 0;
@@ -145,12 +145,12 @@ public class GradientMap : AdditionalLayerInfoBase
 				
 				self._colorModel = fileBytes!.readShort() ;
 				self._minimumColor = [] ;
-				for (var i = 0;i < 4;i++){
+				for (var i = 0;i < 4;i++) {
 					self._minimumColor!.append(fileBytes!.readShort() >> 8) ;
 				}
 				
 				self._maximumColor = [] ;
-				for (var i = 0;i < 4;i++){
+				for (var i = 0;i < 4;i++) {
 					self._maximumColor!.append(fileBytes!.readShort() >> 8) ;
 				}
 			}

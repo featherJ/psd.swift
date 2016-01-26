@@ -7,8 +7,8 @@
 //
 
 import Foundation
-public class FillOpacity : AdditionalLayerInfoBase{
-	public static var key: String {
+public class FillOpacity : AdditionalLayerInfoBase {
+	public class var key: String {
 		get {
 			return "iOpa";
 		}

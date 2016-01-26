@@ -8,30 +8,30 @@
 
 import Foundation
 public class Exposure : AdditionalLayerInfoBase {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "expA";}
 	}
 	private var _exposure: Float = 0;
-	public var exposure: Float{
-		get{
-		return _exposure;
+	public var exposure: Float {
+		get {
+			return _exposure;
 		}
 	}
 	private var _offset: Float = 0;
-	public var offset: Float{
-		get{
-		return _offset;
+	public var offset: Float {
+		get {
+			return _offset;
 		}
 	}
 	private var _gamma: Float = 0;
-	public var gamma: Float{
-		get{
-		return _gamma;
+	public var gamma: Float {
+		get {
+			return _gamma;
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		self.fileBytes!.position += 2;
 		
 		// Why self shit is big endian is beyond me. Thanks Adobe.

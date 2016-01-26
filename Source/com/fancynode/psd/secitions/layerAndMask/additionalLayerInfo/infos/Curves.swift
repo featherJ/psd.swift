@@ -10,7 +10,7 @@ import Foundation
 
 public class Curves : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "curv";
 		}
@@ -23,7 +23,7 @@ public class Curves : AdditionalLayerInfoBase
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		// Padding, spec is wrong. Maybe Photoshop bug?
 		self.fileBytes!.position += 1;
 		

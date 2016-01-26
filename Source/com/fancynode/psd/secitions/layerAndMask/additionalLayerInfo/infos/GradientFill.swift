@@ -8,13 +8,13 @@
 
 public class GradientFill : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "GdFl";
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		self.fileBytes!.position += 4;
 		self.data = Descriptor.read(fileBytes!) ;
 	}

@@ -7,9 +7,8 @@
 //
 
 import Foundation
-public class LayerSectionDivider : AdditionalLayerInfoBase
-{
-	public static var key: String {
+public class LayerSectionDivider : AdditionalLayerInfoBase {
+	public class var key: String {
 		get {
 			return "lsct";
 		}

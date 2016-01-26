@@ -9,7 +9,7 @@
 import Foundation
 public class HueSaturation : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "hue2";
 		}
@@ -46,7 +46,7 @@ public class HueSaturation : AdditionalLayerInfoBase
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		// Version
 		self.fileBytes!.position += 2;
 		

@@ -15,12 +15,12 @@ import Foundation
  */
 public class ContentGenerator : AdditionalLayerInfoBase
 {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "CgEd";
 		}
 	}
-
+	
 	override public func parse() {
 		// Version
 		self.fileBytes!.position += 4;

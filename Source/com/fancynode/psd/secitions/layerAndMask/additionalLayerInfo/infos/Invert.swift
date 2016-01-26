@@ -9,20 +9,20 @@
 import Foundation
 
 public class Invert : AdditionalLayerInfoBase {
-	public static var key: String {
+	public class var key: String {
 		get {
 			return "nvrt";
 		}
 	}
 	
 	private var _inverted: Bool = false;
-	public var inverted: Bool{
+	public var inverted: Bool {
 		get {
 			return _inverted;
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		// There is no data. The presence of this info block is
 		// all that's provided.
 		self._inverted = true;

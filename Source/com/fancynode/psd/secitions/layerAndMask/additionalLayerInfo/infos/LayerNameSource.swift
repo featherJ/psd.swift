@@ -8,8 +8,8 @@
 
 import Foundation
 
-public class LayerNameSource : AdditionalLayerInfoBase{
-	public static var key: String {
+public class LayerNameSource : AdditionalLayerInfoBase {
+	public class var key: String {
 		get {
 			return "lnsr";
 		}
@@ -22,7 +22,7 @@ public class LayerNameSource : AdditionalLayerInfoBase{
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		self._id = self.fileBytes!.readString(4) ;
 	}
 }
