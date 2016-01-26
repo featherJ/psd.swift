@@ -182,6 +182,18 @@
 		78BA2D441C57F42000024BEF /* Threshold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D421C57F42000024BEF /* Threshold.swift */; };
 		78BA2D461C57F47500024BEF /* UnicodeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D451C57F47500024BEF /* UnicodeName.swift */; };
 		78BA2D471C57F47500024BEF /* UnicodeName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D451C57F47500024BEF /* UnicodeName.swift */; };
+		78BA2D4A1C57F6B500024BEF /* VectorMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D491C57F6B500024BEF /* VectorMask.swift */; };
+		78BA2D4B1C57F6B500024BEF /* VectorMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D491C57F6B500024BEF /* VectorMask.swift */; };
+		78BA2D4D1C57F73600024BEF /* PathRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D4C1C57F73600024BEF /* PathRecord.swift */; };
+		78BA2D4E1C57F73600024BEF /* PathRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D4C1C57F73600024BEF /* PathRecord.swift */; };
+		78BA2D501C57F9C200024BEF /* VectorOrigination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D4F1C57F9C200024BEF /* VectorOrigination.swift */; };
+		78BA2D511C57F9C200024BEF /* VectorOrigination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D4F1C57F9C200024BEF /* VectorOrigination.swift */; };
+		78BA2D531C57FA0000024BEF /* VectorStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D521C57FA0000024BEF /* VectorStroke.swift */; };
+		78BA2D541C57FA0000024BEF /* VectorStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D521C57FA0000024BEF /* VectorStroke.swift */; };
+		78BA2D561C57FA4B00024BEF /* VectorStrokeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D551C57FA4B00024BEF /* VectorStrokeContent.swift */; };
+		78BA2D571C57FA4B00024BEF /* VectorStrokeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D551C57FA4B00024BEF /* VectorStrokeContent.swift */; };
+		78BA2D591C57FAA800024BEF /* Vibrance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D581C57FAA800024BEF /* Vibrance.swift */; };
+		78BA2D5A1C57FAA800024BEF /* Vibrance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA2D581C57FAA800024BEF /* Vibrance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -297,6 +309,12 @@
 		78BA2D3F1C57F20600024BEF /* SolidColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidColor.swift; sourceTree = "<group>"; };
 		78BA2D421C57F42000024BEF /* Threshold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threshold.swift; sourceTree = "<group>"; };
 		78BA2D451C57F47500024BEF /* UnicodeName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnicodeName.swift; sourceTree = "<group>"; };
+		78BA2D491C57F6B500024BEF /* VectorMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorMask.swift; sourceTree = "<group>"; };
+		78BA2D4C1C57F73600024BEF /* PathRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathRecord.swift; sourceTree = "<group>"; };
+		78BA2D4F1C57F9C200024BEF /* VectorOrigination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOrigination.swift; sourceTree = "<group>"; };
+		78BA2D521C57FA0000024BEF /* VectorStroke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorStroke.swift; sourceTree = "<group>"; };
+		78BA2D551C57FA4B00024BEF /* VectorStrokeContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorStrokeContent.swift; sourceTree = "<group>"; };
+		78BA2D581C57FAA800024BEF /* Vibrance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -498,6 +516,11 @@
 				78BA2D421C57F42000024BEF /* Threshold.swift */,
 				7812357C1C4537DC00985ED6 /* TypeTool.swift */,
 				78BA2D451C57F47500024BEF /* UnicodeName.swift */,
+				78BA2D491C57F6B500024BEF /* VectorMask.swift */,
+				78BA2D4F1C57F9C200024BEF /* VectorOrigination.swift */,
+				78BA2D521C57FA0000024BEF /* VectorStroke.swift */,
+				78BA2D551C57FA4B00024BEF /* VectorStrokeContent.swift */,
+				78BA2D581C57FAA800024BEF /* Vibrance.swift */,
 			);
 			path = infos;
 			sourceTree = "<group>";
@@ -526,6 +549,7 @@
 			isa = PBXGroup;
 			children = (
 				781235871C4537DC00985ED6 /* Descriptor.swift */,
+				78BA2D4C1C57F73600024BEF /* PathRecord.swift */,
 			);
 			path = structure;
 			sourceTree = "<group>";
@@ -882,6 +906,8 @@
 				78BA2D2B1C57E65F00024BEF /* PhotoFilter.swift in Sources */,
 				78BA2D461C57F47500024BEF /* UnicodeName.swift in Sources */,
 				783889101C5693EE00417864 /* NSArrayExtension.swift in Sources */,
+				78BA2D531C57FA0000024BEF /* VectorStroke.swift in Sources */,
+				78BA2D591C57FAA800024BEF /* Vibrance.swift in Sources */,
 				78AEB2CF1C46BD4900A7890E /* InstrObjectEnd.swift in Sources */,
 				781235C31C4537DC00985ED6 /* LayerNameSource.swift in Sources */,
 				78BA2D2E1C57E84100024BEF /* ColorUtil.swift in Sources */,
@@ -889,6 +915,7 @@
 				781235B51C4537DC00985ED6 /* Exposure.swift in Sources */,
 				781235A31C4537DC00985ED6 /* BlackWhite.swift in Sources */,
 				781235BB1C4537DC00985ED6 /* GradientMap.swift in Sources */,
+				78BA2D501C57F9C200024BEF /* VectorOrigination.swift in Sources */,
 				78BA2D221C57E58500024BEF /* ObjectEffects.swift in Sources */,
 				781235C91C4537DC00985ED6 /* LayerRAWParser.swift in Sources */,
 				781235A91C4537DC00985ED6 /* BrightnessContrast.swift in Sources */,
@@ -903,6 +930,7 @@
 				78AEB2D91C46BD4900A7890E /* InstrString.swift in Sources */,
 				781235951C4537DC00985ED6 /* FileVersionConsts.swift in Sources */,
 				781235B71C4537DC00985ED6 /* FillOpacity.swift in Sources */,
+				78BA2D4D1C57F73600024BEF /* PathRecord.swift in Sources */,
 				781235BF1C4537DC00985ED6 /* Invert.swift in Sources */,
 				783889151C56979400417864 /* LegacyTypeTool.swift in Sources */,
 				781235CF1C4537DC00985ED6 /* RAWParser.swift in Sources */,
@@ -912,6 +940,7 @@
 				781235DB1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
 				78555BC31C57D584005706BE /* MetadataSetting.swift in Sources */,
 				7812358B1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
+				78BA2D4A1C57F6B500024BEF /* VectorMask.swift in Sources */,
 				781235D91C4537DC00985ED6 /* Logger.swift in Sources */,
 				78448C191C455B4C0073B5B0 /* AbstractInstruction.swift in Sources */,
 				78AEB2D51C46BD4900A7890E /* InstrPropertyWithData.swift in Sources */,
@@ -930,6 +959,7 @@
 				781235AB1C4537DC00985ED6 /* ChannelMixer.swift in Sources */,
 				7812359F1C4537DC00985ED6 /* AdditionalLayerInfoBase.swift in Sources */,
 				781235A51C4537DC00985ED6 /* BlendClippingElements.swift in Sources */,
+				78BA2D561C57FA4B00024BEF /* VectorStrokeContent.swift in Sources */,
 				781235AD1C4537DC00985ED6 /* ColorBalance.swift in Sources */,
 				78AEB2C71C46BD4900A7890E /* InstrMultiLineArrayEnd.swift in Sources */,
 				7812358F1C4537DC00985ED6 /* ChannelInfo.swift in Sources */,
@@ -979,6 +1009,8 @@
 				78BA2D2C1C57E65F00024BEF /* PhotoFilter.swift in Sources */,
 				78BA2D471C57F47500024BEF /* UnicodeName.swift in Sources */,
 				783889111C5693EE00417864 /* NSArrayExtension.swift in Sources */,
+				78BA2D541C57FA0000024BEF /* VectorStroke.swift in Sources */,
+				78BA2D5A1C57FAA800024BEF /* Vibrance.swift in Sources */,
 				78555BC11C57D4AD005706BE /* Levels.swift in Sources */,
 				78AEB2D01C46BD4900A7890E /* InstrObjectEnd.swift in Sources */,
 				78BA2D2F1C57E84100024BEF /* ColorUtil.swift in Sources */,
@@ -986,6 +1018,7 @@
 				78AEB2CA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */,
 				781235B61C4537DC00985ED6 /* Exposure.swift in Sources */,
 				781235A41C4537DC00985ED6 /* BlackWhite.swift in Sources */,
+				78BA2D511C57F9C200024BEF /* VectorOrigination.swift in Sources */,
 				78BA2D231C57E58500024BEF /* ObjectEffects.swift in Sources */,
 				781235BC1C4537DC00985ED6 /* GradientMap.swift in Sources */,
 				781235CA1C4537DC00985ED6 /* LayerRAWParser.swift in Sources */,
@@ -1000,6 +1033,7 @@
 				78AEB2DA1C46BD4900A7890E /* InstrString.swift in Sources */,
 				781235961C4537DC00985ED6 /* FileVersionConsts.swift in Sources */,
 				781235B81C4537DC00985ED6 /* FillOpacity.swift in Sources */,
+				78BA2D4E1C57F73600024BEF /* PathRecord.swift in Sources */,
 				781235C01C4537DC00985ED6 /* Invert.swift in Sources */,
 				783889161C56979400417864 /* LegacyTypeTool.swift in Sources */,
 				781235D01C4537DC00985ED6 /* RAWParser.swift in Sources */,
@@ -1009,6 +1043,7 @@
 				781235DC1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
 				78555BC41C57D586005706BE /* MetadataSetting.swift in Sources */,
 				7812358C1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
+				78BA2D4B1C57F6B500024BEF /* VectorMask.swift in Sources */,
 				781235DA1C4537DC00985ED6 /* Logger.swift in Sources */,
 				78448C1A1C455B4C0073B5B0 /* AbstractInstruction.swift in Sources */,
 				78AEB2D61C46BD4900A7890E /* InstrPropertyWithData.swift in Sources */,
@@ -1027,6 +1062,7 @@
 				781235AC1C4537DC00985ED6 /* ChannelMixer.swift in Sources */,
 				781235A01C4537DC00985ED6 /* AdditionalLayerInfoBase.swift in Sources */,
 				781235A61C4537DC00985ED6 /* BlendClippingElements.swift in Sources */,
+				78BA2D571C57FA4B00024BEF /* VectorStrokeContent.swift in Sources */,
 				781235AE1C4537DC00985ED6 /* ColorBalance.swift in Sources */,
 				78AEB2C81C46BD4900A7890E /* InstrMultiLineArrayEnd.swift in Sources */,
 				781235901C4537DC00985ED6 /* ChannelInfo.swift in Sources */,
