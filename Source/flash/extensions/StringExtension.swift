@@ -76,7 +76,6 @@ public extension String {
 	 A substring based on the specified parameters.
 	 */
 	public func substr(startIndex: Int = 0, _ len: Int = 0x7fffffff) -> String {
-		
 		var start = startIndex;
 		if (start < 0) {
 			start = self.length + start;
@@ -111,14 +110,12 @@ public extension String {
 	 A substring based on the specified parameters.
 	 */
 	public func substring(startIndex: Int = 0, _ endIndex: Int = 0x7fffffff) -> String {
-		
 		var start = min(startIndex, endIndex) ;
 		start = max(0, start) ;
 		start = min(self.length, start) ;
 		var end = max(startIndex, endIndex) ;
 		end = max(0, end) ;
 		end = min(self.length, end) ;
-		
 		let startElement = self.startIndex.advancedBy(start) ;
 		let endElement = self.startIndex.advancedBy(end) ;
 		return self.substringWithRange(Range<String.Index>(start: startElement, end: endElement)) ;
@@ -136,8 +133,7 @@ public extension String {
 	 - returns: 指定子字符串的第一个匹配项的索引，或 -1。<br>
 	 The index of the first occurrence of the specified substring or -1.
 	 */
-	public func indexOf(val: String, startIndex: Int = 0) -> Int
-	{
+	public func indexOf(val: String, startIndex: Int = 0) -> Int{
 		let range = self.rangeOfString(val)
 		if let range = range {
 			return self.startIndex.distanceTo(range.startIndex)

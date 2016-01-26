@@ -20,8 +20,56 @@ public extension NSMutableArray {
 	 An integer representing the length of the new array.
 	 */
 	public func push(args: AnyObject...) -> Int {
-		self.addObjectsFromArray(args) ;
+		self.addObjectsFromArray(args)
+		return length
+	}
+	
+	/**
+	 将一个或多个元素添加到数组的开头，并返回该数组的新长度。数组中的其他元素从其原始位置 i 移到 i+1。<p>
+	 Adds one or more elements to the beginning of an array and returns the new length of the array.
+	 The other elements in the array are moved from their original position, i, to i+1.
+
+	 - parameter args: 一个或多个要插入到数组开头的数字、元素或变量。<p>
+	 One or more numbers, elements, or variables to be inserted at the beginning of the array.
+
+	 - returns: 一个整数，表示该数组的新长度。<p>
+	 An integer representing the new length of the array.
+	 */
+	public func unshift(args: AnyObject...) -> Int {
+		for (var i = args.count - 1;i >= 0;i--) {
+			self.insertObject(args[i], atIndex: 0)
+		}
 		return length;
+	}
+	/**
+	 删除数组中最后一个元素，并返回该元素的值。<p>
+	 Removes the last element from an array and returns the value of that element.
+
+	 - returns: 指定的数组中最后一个元素（可以为任意数据类型）的值。<p>
+	 The value of the last element (of any data type) in the specified array.
+	 */
+	public func pop() -> AnyObject? {
+		let lastObject = self.lastObject
+		if (lastObject != nil) {
+			self.removeObjectAtIndex(length - 1)
+		}
+		return lastObject
+	}
+	
+	/**
+	 删除数组中第一个元素，并返回该元素。其余数组元素将从其原始位置 i 移至 i-1。<p>
+	 Removes the first element from an array and returns that element.
+	 The remaining array elements are moved from their original position, i, to i-1.
+
+	 - returns: 数组中的第一个元素（可以是任意数据类型）。<p>
+	 The first element (of any data type) in an array.
+	 */
+	public func shift() -> AnyObject? {
+		let firstObject = self.firstObject
+		if (firstObject != nil) {
+			self.removeObjectAtIndex(0)
+		}
+		return firstObject
 	}
 	
 	/**
