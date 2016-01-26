@@ -7,8 +7,7 @@
 //
 
 import Foundation
-public class MetadataSetting : AdditionalLayerInfoBase
-{
+public class MetadataSetting : AdditionalLayerInfoBase{
 	public class var key: String {
 		get {
 			return "shmd";
