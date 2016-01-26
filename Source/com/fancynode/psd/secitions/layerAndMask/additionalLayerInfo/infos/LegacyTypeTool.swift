@@ -26,10 +26,8 @@ public class LegacyTypeTool : TypeTool{
 		
 		let facesCount = self.fileBytes!.readShort() ;
 		
-		let currentData =  NSMutableDictionary();
-		self.data = currentData
 		let faces = NSMutableArray() ;
-		currentData["face"] = faces ;
+		data["face"] = faces ;
 		for (var i = 0; i < facesCount; i++){
 			let face = NSMutableDictionary() ;
 			face["mark"] = self.fileBytes!.readShort() ;
@@ -50,7 +48,7 @@ public class LegacyTypeTool : TypeTool{
 		// Style Information
 		let stylesCount = self.fileBytes!.readShort() ;
 		let styles = NSMutableArray()
-		currentData["style"] = styles ;
+		data["style"] = styles ;
 		for (var i = 0; i < stylesCount; i++){
 			let style = NSMutableDictionary() ;
 			style["mark"] = self.fileBytes!.readShort() ;
@@ -68,17 +66,17 @@ public class LegacyTypeTool : TypeTool{
 		}
 		
 		// Text information
-		currentData["type"] = self.fileBytes!.readShort() ;
-		currentData["scalingFactor"] = self.fileBytes!.readInt() ;
-		currentData["characterCount"] = self.fileBytes!.readInt() ;
-		currentData["horzPlace"] = self.fileBytes!.readInt() ;
-		currentData["vertPlace"] = self.fileBytes!.readInt() ;
-		currentData["selectStart"] = self.fileBytes!.readInt() ;
-		currentData["selectEnd"] = self.fileBytes!.readInt() ;
+		data["type"] = self.fileBytes!.readShort() ;
+		data["scalingFactor"] = self.fileBytes!.readInt() ;
+		data["characterCount"] = self.fileBytes!.readInt() ;
+		data["horzPlace"] = self.fileBytes!.readInt() ;
+		data["vertPlace"] = self.fileBytes!.readInt() ;
+		data["selectStart"] = self.fileBytes!.readInt() ;
+		data["selectEnd"] = self.fileBytes!.readInt() ;
 		
 		let linesCount = self.fileBytes!.readShort() ;
 		let lines = NSMutableArray();
-		currentData["line"] = lines ;
+		data["line"] = lines ;
 		for (var i = 0; i < linesCount; i++){
 			let line = NSMutableDictionary();
 			line["charCount"] = self.fileBytes!.readInt() ;
@@ -90,13 +88,12 @@ public class LegacyTypeTool : TypeTool{
 		}
 		
 		// Color information
-		currentData["color"] = self.fileBytes!.readSpaceColor() ;
-		currentData["antialias"] = self.fileBytes!.readBoolean() ;
+		data["color"] = self.fileBytes!.readSpaceColor() ;
+		data["antialias"] = self.fileBytes!.readBoolean() ;
 	}
 	
 	/**
 	 * Not sure where self is stored right now
-	 *
 	 */
 	override public var textValue: String {
 		get {

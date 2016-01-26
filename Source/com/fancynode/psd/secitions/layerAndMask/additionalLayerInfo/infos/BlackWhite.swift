@@ -56,8 +56,8 @@ public class BlackWhite: AdditionalLayerInfoBase {
 			return _tint;
 		}
 	}
-	private var _tintColor: [String:Int]? = nil
-	public var tintColor: [String:Int]? {
+	private var _tintColor: NSDictionary? = nil
+	public var tintColor: NSDictionary? {
 		get {
 			return _tintColor;
 		}
@@ -75,24 +75,27 @@ public class BlackWhite: AdditionalLayerInfoBase {
 		}
 	}
 	
+	var data: NSDictionary?;
 	override public func parse()
 	{
 		self.fileBytes!.position += 4;
 		self.data = Descriptor.read(fileBytes!) ;
-
-		self._red = self.data["Rd "] as! Int;
-		self._yellow = self.data["Yllw"] as! Int
-		self._green = self.data["Grn "] as! Int
-		self._cyan = self.data["Cyn "] as! Int
-		self._blue = self.data["Bl "] as! Int
-		self._magenta = self.data["Mgnt"] as! Int
-		self._tint = self.data["useTint"] as! Int
-		self._tintColor = [
-			"red": self.data["tintColor"]!!["Rd "] as! Int,
-			"green": self.data["tintColor"]!!["Grn "] as! Int,
-			"blue": self.data["tintColor"]!!["Bl "] as! Int
-		]
-		self._presetId = self.data["bwPresetKind"] as! Int
-		self._presetName = self.data["blackAndWhitePresetFileName"] as! Int
+		
+		self._red = self.data!["Rd "] != nil ? Int(self.data!["Rd "] as! NSNumber) : 0;
+		self._yellow = self.data!["Yllw"] != nil ? Int(self.data!["Yllw"] as! NSNumber) : 0;
+		self._green = self.data!["Grn "] != nil ? Int(self.data!["Grn "] as! NSNumber) : 0
+		self._cyan = self.data!["Cyn "] != nil ? Int(self.data!["Cyn "] as! NSNumber) : 0;
+		self._blue = self.data!["Bl "] != nil ? Int(self.data!["Bl "] as! NSNumber) : 0;
+		self._magenta = self.data!["Mgnt"] != nil ? Int(self.data!["Mgnt"] as! NSNumber): 0;
+		self._tint = self.data!["useTint"] != nil ? Int(self.data!["useTint"] as! NSNumber) : 0;
+		if let tintColor = self.data!["tintColor"] as? NSDictionary {
+			self._tintColor = NSDictionary(dictionary: [
+					"red": tintColor["Rd "] != nil ? Int(tintColor["Rd "] as! NSNumber) : 0,
+					"green": tintColor["Grn "] != nil ? Int(tintColor["Grn "] as! NSNumber) : 0,
+					"blue": tintColor["Bl "] != nil ? Int(tintColor["Bl "] as! NSNumber) : 0
+				]) ;
+		}
+		self._presetId = self.data!["bwPresetKind"] != nil ? Int(self.data!["bwPresetKind"] as! NSNumber) : 0;
+		self._presetName = self.data!["blackAndWhitePresetFileName"] != nil ? Int(self.data!["blackAndWhitePresetFileName"] as! NSNumber) : 0;
 	}
 }

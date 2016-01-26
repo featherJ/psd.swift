@@ -6,6 +6,7 @@
 // Copyright © 2016年 fancynode. All rights reserved.
 //
 
+import Foundation
 public class GradientFill : AdditionalLayerInfoBase
 {
 	public class var key: String {
@@ -14,6 +15,7 @@ public class GradientFill : AdditionalLayerInfoBase
 		}
 	}
 	
+	var data:NSDictionary?;
 	override public func parse() {
 		self.fileBytes!.position += 4;
 		self.data = Descriptor.read(fileBytes!) ;

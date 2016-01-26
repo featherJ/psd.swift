@@ -24,7 +24,7 @@ public class Descriptor {
 	 - parameter bytes: 文件的二进制数据 <br> The bytes of psd file
 	 - returns: 解析结果 <br> The parsed object.
 	 */
-	public static func read(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
+	public static func read(bytes: PSDBytes) -> NSDictionary {
 		return Descriptor.instance.parse(bytes) ;
 	}
 	/**
@@ -33,8 +33,8 @@ public class Descriptor {
 	 - parameter bytes: 文件的二进制数据 <br> The bytes of psd file
 	 - returns: 解析结果 <br> The parsed object.
 	 */
-	public func parse(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
-		var data = Dictionary<String, AnyObject>() ;
+	public func parse(bytes: PSDBytes) -> NSDictionary {
+		let data = NSMutableDictionary() ;
 		data["class"] = parseClass(bytes) ;
 		let numItems = bytes.readInt() ;
 		Logger.debug("Class = \(data["class"]) + Item count = \(numItems)") ;
@@ -47,23 +47,23 @@ public class Descriptor {
 		}
 		return data;
 	}
-	private func parseClass(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
-		return [
-			"name": bytes.readUnicodeString(),
-			"id": parseId(bytes)
-		]
+	private func parseClass(bytes: PSDBytes) -> NSMutableDictionary {
+		return NSMutableDictionary(dictionary: [
+				"name": bytes.readUnicodeString(),
+				"id": parseId(bytes)
+			]) ;
 	}
 	private func parseId(bytes: PSDBytes) -> String
 	{
 		let len = bytes.readInt() ;
 		return len == 0 ? bytes.readString(4) : bytes.readString(len) ;
 	}
-	private func parseKeyItem(bytes: PSDBytes) -> Dictionary<String, AnyObject>
+	private func parseKeyItem(bytes: PSDBytes) -> NSMutableDictionary
 	{
 		let id = parseId(bytes) ;
 		Logger.debug("Key = " + id) ;
 		let value = parseItem(bytes) ;
-		return ["id": id, "value": value] ;
+		return NSMutableDictionary(dictionary: ["id": id, "value": value]) ;
 	}
 	private func parseItem(bytes: PSDBytes, var _ type: String = "") -> AnyObject
 	{
@@ -148,31 +148,31 @@ public class Descriptor {
 	private func parseOffset(bytes: PSDBytes) -> Int {
 		return bytes.readInt() ;
 	}
-	private func parseProperty(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
-		return [
-			"class": parseClass(bytes),
-			"id": parseId(bytes)
-		]
+	private func parseProperty(bytes: PSDBytes) -> NSMutableDictionary {
+		return NSMutableDictionary(dictionary: [
+				"class": parseClass(bytes),
+				"id": parseId(bytes)
+			]) ;
 	}
-	private func parseEnum(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
-		return [
+	private func parseEnum(bytes: PSDBytes) -> NSMutableDictionary{
+		return NSMutableDictionary(dictionary:[
 			"type": parseId(bytes),
 			"value": parseId(bytes)
-		]
+			]);
 	}
-	private func parseEnumReference(bytes: PSDBytes) -> Dictionary<String, AnyObject>
+	private func parseEnumReference(bytes: PSDBytes) -> NSMutableDictionary
 	{
-		return [
+		return NSMutableDictionary(dictionary: [
 			"class": parseClass(bytes),
 			"type": parseId(bytes),
 			"value": parseId(bytes)
-		]
+			]);
 	}
 	private func parseAlias(bytes: PSDBytes) -> String {
 		let len = bytes.readInt() ;
 		return bytes.readString(len) ;
 	}
-	private func parseFilePath(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
+	private func parseFilePath(bytes: PSDBytes) -> NSMutableDictionary {
 		_ = bytes.readInt() ;
 		// Little-endian, because fuck the world.
 		let sig: String = bytes.readString(4) ;
@@ -181,18 +181,18 @@ public class Descriptor {
 		let num_chars = bytes.readInt() ;
 		bytes.endian = Endian.BIG_ENDIAN;
 		let path = bytes.readUnicodeString(num_chars) ;
-		return ["sig": sig, "path": path] ;
+		return NSMutableDictionary(dictionary:["sig": sig, "path": path]);
 	}
-	private func parseList(bytes: PSDBytes) -> [AnyObject]
+	private func parseList(bytes: PSDBytes) -> NSMutableArray
 	{
 		let count = bytes.readInt() ;
 		var items: [AnyObject] = [] ;
 		for (var i = 0;i < count;i++) {
 			items.append(parseItem(bytes)) ;
 		}
-		return items;
+		return NSMutableArray(array: items);
 	}
-	private func parseObjectArray(bytes: PSDBytes) -> Dictionary<String, AnyObject>
+	private func parseObjectArray(bytes: PSDBytes) -> NSMutableDictionary
 	{
 //		throw new Error("Object array not implemented yet") ;
 		let count = bytes.readInt() ;
@@ -201,7 +201,7 @@ public class Descriptor {
 		Logger.put(count) ;
 		Logger.put(itemInObj) ;
 		Logger.put(wat) ;
-		var obj: Dictionary<String, AnyObject> = [String: AnyObject]() ;
+		let obj = NSMutableDictionary() ;
 		for (var i = 0;i < count;i++)
 		{
 			let name: String = bytes.readString(bytes.readInt()) ;
@@ -214,10 +214,10 @@ public class Descriptor {
 		let len = bytes.readInt() ;
 		return bytes.read(len) ;
 	}
-	private func parseReference(bytes: PSDBytes) -> [Dictionary<String, AnyObject>]
+	private func parseReference(bytes: PSDBytes) -> NSMutableArray
 	{
 		let numItems = bytes.readInt() ;
-		var items: [Dictionary<String, AnyObject>] = [] ;
+		let items = NSMutableArray();
 		
 		for (var i = 0;i < numItems;i++) {
 			let type: String = bytes.readString(4) ;
@@ -249,11 +249,11 @@ public class Descriptor {
 			default:
 				break;
 			}
-			items.append(["type": type, "value": value]) ;
+			items.push(NSMutableDictionary(dictionary: ["type": type, "value": value])) ;
 		}
 		return items;
 	}
-	private func parseUnitDouble(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
+	private func parseUnitDouble(bytes: PSDBytes) -> NSMutableDictionary {
 		let unitId: String = bytes.readString(4) ;
 		var unit: String = "";
 		switch (unitId)
@@ -286,9 +286,9 @@ public class Descriptor {
 			break;
 		}
 		let value = bytes.readDouble() ;
-		return ["id": unitId, "unit": unit, "value": value] ;
+		return NSMutableDictionary(dictionary: ["id": unitId, "unit": unit, "value": value]);
 	}
-	private func parseUnitFloat(bytes: PSDBytes) -> Dictionary<String, AnyObject> {
+	private func parseUnitFloat(bytes: PSDBytes) ->NSMutableDictionary {
 		let unitId: String = bytes.readString(4) ;
 		var unit: String = "";
 		switch (unitId) {
@@ -320,6 +320,6 @@ public class Descriptor {
 			break;
 		}
 		let value = bytes.readFloat() ;
-		return ["id": unitId, "unit": unit, "value": value] ;
+		return NSMutableDictionary(dictionary: ["id": unitId, "unit": unit, "value": value]);
 	}
 }

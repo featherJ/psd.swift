@@ -21,14 +21,14 @@ public class HueSaturation : AdditionalLayerInfoBase
 			return _type;
 		}
 	}
-	private var _colorization: AnyObject?;
-	public var colorization: AnyObject? {
+	private var _colorization: NSDictionary?;
+	public var colorization: NSDictionary? {
 		get {
 			return _colorization;
 		}
 	}
-	private var _master: AnyObject?;
-	public var master: AnyObject? {
+	private var _master: NSDictionary?;
+	public var master: NSDictionary? {
 		get {
 			return _master;
 		}
@@ -55,17 +55,17 @@ public class HueSaturation : AdditionalLayerInfoBase
 		// Padding byte
 		self.fileBytes!.position += 1;
 		
-		self._colorization = [
-			"hue:": self.fileBytes!.readShort(),
-			"saturation": self.fileBytes!.readShort(),
-			"lightness": self.fileBytes!.readShort()
-		] ;
+		self._colorization = NSDictionary(dictionary: [
+				"hue:": self.fileBytes!.readShort(),
+				"saturation": self.fileBytes!.readShort(),
+				"lightness": self.fileBytes!.readShort()
+			]) ;
 		
-		self._master = [
-			"hue:": self.fileBytes!.readShort(),
-			"saturation": self.fileBytes!.readShort(),
-			"lightness": self.fileBytes!.readShort()
-		] ;
+		self._master = NSDictionary(dictionary: [
+				"hue:": self.fileBytes!.readShort(),
+				"saturation": self.fileBytes!.readShort(),
+				"lightness": self.fileBytes!.readShort()
+			]) ;
 		
 		self._rangeValues = [] ;
 		self._settingValues = [] ;

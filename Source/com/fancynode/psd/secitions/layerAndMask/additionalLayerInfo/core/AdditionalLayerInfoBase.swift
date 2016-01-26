@@ -20,9 +20,7 @@ public class AdditionalLayerInfoBase: IAdditionalLayerInfo {
 	var length: Int = 0;
 	/** 该模块的结束位置 <br> The end position of this section */
 	var infoEnd: Int = 0;
-	/** 解析后的附加数据 <br> The decoded data. */
-	var data: AnyObject = [];
-	
+
 	required public init()
 	{
 	}

@@ -21,29 +21,27 @@ public class ChannelMixer : AdditionalLayerInfoBase
 			return _monochrome;
 		}
 	}
-	private var _color: [AnyObject]? = nil;
-	public var color: [AnyObject]? {
+	private var _color: NSMutableArray? = nil;
+	public var color: NSArray? {
 		get {
 			return _color;
 		}
 	}
 	
-	override public func parse(){
+	override public func parse() {
 		self.fileBytes!.position += 2;
-		
 		self._monochrome = self.fileBytes!.readShort() > 0
-		
-		self._color = [] ;
-		for (var i = 0;i < 4;i++){
-			self._color!.append(
-				[
-					"redCyan": self.fileBytes!.readShort(),
-					"greenMagenta": self.fileBytes!.readShort(),
-					"blueYellow": self.fileBytes!.readShort(),
-					"black": self.fileBytes!.readShort(),
-					"constant": self.fileBytes!.readShort()
-				]
-			)
+		self._color = NSMutableArray() ;
+		for (var i = 0;i < 4;i++) {
+			self._color!.push(NSDictionary(dictionary:
+						[
+						"redCyan": self.fileBytes!.readShort(),
+						"greenMagenta": self.fileBytes!.readShort(),
+						"blueYellow": self.fileBytes!.readShort(),
+						"black": self.fileBytes!.readShort(),
+						"constant": self.fileBytes!.readShort()
+					]
+				)) ;
 		}
 	}
 }

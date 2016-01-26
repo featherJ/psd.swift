@@ -33,14 +33,14 @@ public class GradientMap : AdditionalLayerInfoBase
 			return _name;
 		}
 	}
-	private var _colorStops: [AnyObject]? = nil
-	public var colorStops: [AnyObject]? {
+	private var _colorStops: NSMutableArray? = nil
+	public var colorStops: NSArray? {
 		get {
 			return _colorStops;
 		}
 	}
-	private var _transparencyStops: [AnyObject]? = nil
-	public var transparencyStops: [AnyObject]? {
+	private var _transparencyStops: NSMutableArray? = nil
+	public var transparencyStops: NSArray? {
 		get {
 			return _transparencyStops;
 		}
@@ -87,13 +87,13 @@ public class GradientMap : AdditionalLayerInfoBase
 			return _colorModel;
 		}
 	}
-	private var _minimumColor: [Int]? = nil;
+	private var _minimumColor: [Int]?;
 	public var minimumColor: [Int]? {
 		get {
 			return _minimumColor;
 		}
 	}
-	private var _maximumColor: [Int]? = nil;
+	private var _maximumColor: [Int]?;
 	public var maximumColor: [Int]? {
 		get {
 			return _maximumColor;
@@ -110,26 +110,26 @@ public class GradientMap : AdditionalLayerInfoBase
 		self._name = fileBytes!.readUnicodeString() ;
 		
 		var stops = fileBytes!.readShort() ;
-		_colorStops = [] ;
+		_colorStops = NSMutableArray() ;
 		for (var i = 0;i < stops;i++) {
-			_colorStops!.append([
-					"location": fileBytes!.readInt(),
-					"midpoint": fileBytes!.readInt(),
-					"color": fileBytes!.readSpaceColor()
-				]) ;
+			_colorStops!.push(NSDictionary(dictionary: [
+						"location": fileBytes!.readInt(),
+						"midpoint": fileBytes!.readInt(),
+						"color": fileBytes!.readSpaceColor()
+					])) ;
 			
 			// Mystery padding
 			fileBytes!.position += 2;
 		}
 		
 		stops = fileBytes!.readShort() ;
-		_transparencyStops = [] ;
+		_transparencyStops = NSMutableArray() ;
 		for (var i = 0;i < stops;i++) {
-			_transparencyStops!.append([
-					"location": fileBytes!.readInt(),
-					"midpoint": fileBytes!.readInt(),
-					"opacity": fileBytes!.readShort()
-				]) ;
+			_transparencyStops!.push(NSDictionary(dictionary: [
+						"location": fileBytes!.readInt(),
+						"midpoint": fileBytes!.readInt(),
+						"opacity": fileBytes!.readShort()
+					])) ;
 		}
 		
 		let expansionCount = fileBytes!.readShort() ;

@@ -15,6 +15,7 @@ public class ColorLookup : AdditionalLayerInfoBase
 		}
 	}
 	
+	var data:NSDictionary?;
 	override public func parse() {
 		self.fileBytes!.position += 6;
 		self.data = Descriptor.read(fileBytes!) ;

@@ -15,21 +15,21 @@ public class ColorBalance : AdditionalLayerInfoBase
 			return "blnc";
 		}
 	}
-
-	private var _shadows: AnyObject? = nil
-	public var shadows: AnyObject? {
+	
+	private var _shadows: NSDictionary? = nil
+	public var shadows: NSDictionary? {
 		get {
 			return _shadows;
 		}
 	}
-	private var _midtones: AnyObject? = nil
-	public var midtones: AnyObject? {
+	private var _midtones: NSDictionary? = nil
+	public var midtones: NSDictionary? {
 		get {
 			return _midtones;
 		}
 	}
-	private var _highlights: AnyObject? = nil
-	public var highlights: AnyObject? {
+	private var _highlights: NSDictionary? = nil
+	public var highlights: NSDictionary? {
 		get {
 			return _highlights;
 		}
@@ -41,22 +41,22 @@ public class ColorBalance : AdditionalLayerInfoBase
 		}
 	}
 	
-	override public func parse(){
-		self._shadows = [
-			"cyanRed": self.fileBytes!.readShort(),
-			"magentaGreen": self.fileBytes!.readShort(),
-			"yellowBlue": self.fileBytes!.readShort()
-		] ;
-		self._midtones = [
-			"cyanRed": self.fileBytes!.readShort(),
-			"magentaGreen": self.fileBytes!.readShort(),
-			"yellowBlue": self.fileBytes!.readShort()
-		] ;
-		self._highlights = [
-			"cyanRed": self.fileBytes!.readShort(),
-			"magentaGreen": self.fileBytes!.readShort(),
-			"yellowBlue": self.fileBytes!.readShort()
-		] ;
+	override public func parse() {
+		self._shadows = NSDictionary(dictionary: [
+				"cyanRed": self.fileBytes!.readShort(),
+				"magentaGreen": self.fileBytes!.readShort(),
+				"yellowBlue": self.fileBytes!.readShort()
+			]) ;
+		self._midtones = NSDictionary(dictionary: [
+				"cyanRed": self.fileBytes!.readShort(),
+				"magentaGreen": self.fileBytes!.readShort(),
+				"yellowBlue": self.fileBytes!.readShort()
+			]) ;
+		self._highlights = NSDictionary(dictionary: [
+				"cyanRed": self.fileBytes!.readShort(),
+				"magentaGreen": self.fileBytes!.readShort(),
+				"yellowBlue": self.fileBytes!.readShort()
+			]) ;
 		self._preserveLuminosity = self.fileBytes!.readShort() > 0;
 	}
 }

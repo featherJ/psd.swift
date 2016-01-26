@@ -107,6 +107,12 @@
 		78448C1A1C455B4C0073B5B0 /* AbstractInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448C181C455B4C0073B5B0 /* AbstractInstruction.swift */; };
 		78448C1F1C457C6D0073B5B0 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448C1E1C457C6D0073B5B0 /* RegExp.swift */; };
 		78448C201C457C6D0073B5B0 /* RegExp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78448C1E1C457C6D0073B5B0 /* RegExp.swift */; };
+		7848D2061C57CC260092FCB3 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848D2051C57CC260092FCB3 /* Levels.swift */; };
+		78555BBF1C57D4A2005706BE /* Locked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78555BBE1C57D4A2005706BE /* Locked.swift */; };
+		78555BC01C57D4A8005706BE /* Locked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78555BBE1C57D4A2005706BE /* Locked.swift */; };
+		78555BC11C57D4AD005706BE /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848D2051C57CC260092FCB3 /* Levels.swift */; };
+		78555BC31C57D584005706BE /* MetadataSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78555BC21C57D584005706BE /* MetadataSetting.swift */; };
+		78555BC41C57D586005706BE /* MetadataSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78555BC21C57D584005706BE /* MetadataSetting.swift */; };
 		7876B9071C3442120016ABF2 /* psd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B8FC1C3442120016ABF2 /* psd.framework */; };
 		7876B90C1C3442120016ABF2 /* psd_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7876B90B1C3442120016ABF2 /* psd_swiftTests.swift */; };
 		7876B9251C34426D0016ABF2 /* psd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7876B91B1C34426D0016ABF2 /* psd.framework */; };
@@ -218,6 +224,9 @@
 		78448C151C4552BD0073B5B0 /* TextLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextLines.swift; sourceTree = "<group>"; };
 		78448C181C455B4C0073B5B0 /* AbstractInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractInstruction.swift; sourceTree = "<group>"; };
 		78448C1E1C457C6D0073B5B0 /* RegExp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegExp.swift; sourceTree = "<group>"; };
+		7848D2051C57CC260092FCB3 /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		78555BBE1C57D4A2005706BE /* Locked.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locked.swift; sourceTree = "<group>"; };
+		78555BC21C57D584005706BE /* MetadataSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataSetting.swift; sourceTree = "<group>"; };
 		7876B8FC1C3442120016ABF2 /* psd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = psd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7876B9061C3442120016ABF2 /* psdiOSTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = psdiOSTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7876B90B1C3442120016ABF2 /* psd_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = psd_swiftTests.swift; sourceTree = "<group>"; };
@@ -430,6 +439,9 @@
 				7812357A1C4537DC00985ED6 /* LayerNameSource.swift */,
 				7812357B1C4537DC00985ED6 /* LayerSectionDivider.swift */,
 				783889141C56979400417864 /* LegacyTypeTool.swift */,
+				7848D2051C57CC260092FCB3 /* Levels.swift */,
+				78555BBE1C57D4A2005706BE /* Locked.swift */,
+				78555BC21C57D584005706BE /* MetadataSetting.swift */,
 				7812357C1C4537DC00985ED6 /* TypeTool.swift */,
 			);
 			path = infos;
@@ -820,6 +832,7 @@
 				781235A71C4537DC00985ED6 /* BlendInteriorElements.swift in Sources */,
 				781235B91C4537DC00985ED6 /* GradientFill.swift in Sources */,
 				78AEB2CD1C46BD4900A7890E /* InstrNumberWithDecimal.swift in Sources */,
+				7848D2061C57CC260092FCB3 /* Levels.swift in Sources */,
 				78AEB2D91C46BD4900A7890E /* InstrString.swift in Sources */,
 				781235951C4537DC00985ED6 /* FileVersionConsts.swift in Sources */,
 				781235B71C4537DC00985ED6 /* FillOpacity.swift in Sources */,
@@ -830,6 +843,7 @@
 				781235971C4537DC00985ED6 /* Header.swift in Sources */,
 				783889121C5693EE00417864 /* NSMutableArrayExtension.swift in Sources */,
 				781235DB1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
+				78555BC31C57D584005706BE /* MetadataSetting.swift in Sources */,
 				7812358B1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
 				781235D91C4537DC00985ED6 /* Logger.swift in Sources */,
 				78448C191C455B4C0073B5B0 /* AbstractInstruction.swift in Sources */,
@@ -851,6 +865,7 @@
 				781235AD1C4537DC00985ED6 /* ColorBalance.swift in Sources */,
 				78AEB2C71C46BD4900A7890E /* InstrMultiLineArrayEnd.swift in Sources */,
 				7812358F1C4537DC00985ED6 /* ChannelInfo.swift in Sources */,
+				78555BBF1C57D4A2005706BE /* Locked.swift in Sources */,
 				781235B11C4537DC00985ED6 /* ContentGenerator.swift in Sources */,
 				781235D11C4537DC00985ED6 /* RLEParser.swift in Sources */,
 				781235931C4537DC00985ED6 /* ColorModeConsts.swift in Sources */,
@@ -888,6 +903,7 @@
 				781235BE1C4537DC00985ED6 /* HueSaturation.swift in Sources */,
 				78AEB2D21C46BD4900A7890E /* InstrObjectStart.swift in Sources */,
 				783889111C5693EE00417864 /* NSArrayExtension.swift in Sources */,
+				78555BC11C57D4AD005706BE /* Levels.swift in Sources */,
 				78AEB2D01C46BD4900A7890E /* InstrObjectEnd.swift in Sources */,
 				781235C41C4537DC00985ED6 /* LayerNameSource.swift in Sources */,
 				78AEB2CA1C46BD4900A7890E /* InstrMultiLineArrayStart.swift in Sources */,
@@ -910,6 +926,7 @@
 				781235981C4537DC00985ED6 /* Header.swift in Sources */,
 				783889131C5693EE00417864 /* NSMutableArrayExtension.swift in Sources */,
 				781235DC1C4537DC00985ED6 /* PsdUtil.swift in Sources */,
+				78555BC41C57D586005706BE /* MetadataSetting.swift in Sources */,
 				7812358C1C4537DC00985ED6 /* AbstractLazyParser.swift in Sources */,
 				781235DA1C4537DC00985ED6 /* Logger.swift in Sources */,
 				78448C1A1C455B4C0073B5B0 /* AbstractInstruction.swift in Sources */,
@@ -935,6 +952,7 @@
 				781235D21C4537DC00985ED6 /* RLEParser.swift in Sources */,
 				781235941C4537DC00985ED6 /* ColorModeConsts.swift in Sources */,
 				78AEB2D81C46BD4900A7890E /* InstrSingleLineArray.swift in Sources */,
+				78555BC01C57D4A8005706BE /* Locked.swift in Sources */,
 				78448C171C4552BD0073B5B0 /* TextLines.swift in Sources */,
 				781235C81C4537DC00985ED6 /* TypeTool.swift in Sources */,
 				7876B9411C3443A90016ABF2 /* Endian.swift in Sources */,

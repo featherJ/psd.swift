@@ -20,6 +20,7 @@ public class TypeTool : AdditionalLayerInfoBase
 		}
 	}
 	
+	var data = NSMutableDictionary() ;
 	/**
 	 解析图层中的所有文本数据<br>
 	 Parse all of the text data in the layer.
@@ -30,17 +31,15 @@ public class TypeTool : AdditionalLayerInfoBase
 		parseTransformInfo() ;
 		_ = self.fileBytes!.readShort() ;
 		_ = self.fileBytes!.readInt() ;
-		let currenData = NSMutableDictionary() ;
 		
-		currenData["text"] = Descriptor.read(self.fileBytes!) ;
+		data["text"] = Descriptor.read(self.fileBytes!) ;
 		_ = self.fileBytes!.readShort() ;
 		_ = self.fileBytes!.readInt() ;
-		currenData["warp"] = Descriptor.read(fileBytes!) ;
-		currenData["left"] = fileBytes!.readInt() ;
-		currenData["top"] = fileBytes!.readInt() ;
-		currenData["right"] = fileBytes!.readInt() ;
-		currenData["bottom"] = fileBytes!.readInt() ;
-		self.data = currenData;
+		data["warp"] = Descriptor.read(fileBytes!) ;
+		data["left"] = fileBytes!.readInt() ;
+		data["top"] = fileBytes!.readInt() ;
+		data["right"] = fileBytes!.readInt() ;
+		data["bottom"] = fileBytes!.readInt() ;
 	}
 	/**
 	 得到文本域中的文本内容。<p>
@@ -49,8 +48,10 @@ public class TypeTool : AdditionalLayerInfoBase
 	 */
 	public var textValue: String {
 		get {
-			let currentData = data as! NSMutableDictionary;
-			return currentData["text"]!["Txt "] as! String;
+			if let text = data["text"] as? NSDictionary {
+				return text["Txt "] != nil ? String(text["Txt "]!) : "";
+			}
+			return "";
 		}
 	}
 	/**
@@ -58,17 +59,17 @@ public class TypeTool : AdditionalLayerInfoBase
 	 Gets all of the basic font information for self text area. self assumes that
 	 the first font is the only one you want.
 	 */
-	public var font: Dictionary<String, AnyObject>
+	public var font: NSDictionary
 	{
 		get {
-			return ["name": fonts[0],
-				"fonts": fonts,
-				"sizes": sizes,
-				"colors": colors,
-				"alignment": alignment,
-				"leadings": leadings,
-				"css": toCss()
-			] ;
+			return NSDictionary(dictionary: ["name": fonts[0],
+					"fonts": fonts,
+					"sizes": sizes,
+					"colors": colors,
+					"alignment": alignment,
+					"leadings": leadings,
+					"css": toCss()
+				]) ;
 		}
 	}
 	//
@@ -82,11 +83,17 @@ public class TypeTool : AdditionalLayerInfoBase
 		get {
 			if (_fonts == nil) {
 				_fonts = NSMutableArray()
-				if (engineData["ResourceDict"] != nil && engineData["ResourceDict"]!["FontSet"] is NSArray)
-				{
-					let fontsets: NSArray = engineData["ResourceDict"]!["FontSet"] as! NSArray;
-					for (var i = 0;i < fontsets.count;i++) {
-						_fonts!.push(fontsets[i] ["Name"]!!) ;
+				if let engineData = engineData {
+					if let ResourceDict = engineData["ResourceDict"] as? NSDictionary {
+						if let FontSets = ResourceDict["FontSet"] as? NSArray {
+							for (var i = 0;i < FontSets.length;i++) {
+								if let FontSet = FontSets[i] as? NSDictionary {
+									if (FontSet["Name"] != nil) {
+										_fonts!.push(FontSet["Name"]!) ;
+									}
+								}
+							}
+						}
 					}
 				}
 			}
@@ -100,9 +107,8 @@ public class TypeTool : AdditionalLayerInfoBase
 	public var leadings: NSArray {
 		get {
 			if (_leadings == nil) {
-				if (styles["Leading"] != nil)
-				{
-					_leadings = TypeTool.uniq(styles["Leading"] as! NSArray) ;
+				if let Leading = styles["Leading"] as? NSArray {
+					_leadings = TypeTool.uniq(Leading) ;
 				}
 			}
 			return _leadings!;
@@ -115,8 +121,8 @@ public class TypeTool : AdditionalLayerInfoBase
 	public var sizes: NSArray {
 		get {
 			if (_sizes == nil) {
-				if (styles["FontSize"] != nil) {
-					_sizes = TypeTool.uniq(styles["FontSize"] as! NSArray)
+				if let FontSize = styles["FontSize"] as? NSArray {
+					_sizes = TypeTool.uniq(FontSize) ;
 				}
 			}
 			return _sizes!;
@@ -132,16 +138,25 @@ public class TypeTool : AdditionalLayerInfoBase
 			if (_alignment == nil)
 			{
 				_alignment = NSMutableArray() ;
-				let engineDict = engineData["EngineDict"] as? NSDictionary;
-				if (engineDict != nil && engineDict!["ParagraphRun"] != nil && engineDict!["ParagraphRun"]!["RunArray"] != nil)
+				if let engineData = engineData
 				{
-					let alignments: [String] = ["left", "right", "center", "justify"] ;
-					let runArray: NSArray = engineDict!["ParagraphRun"]!["RunArray"] as! NSArray;
-					for (var i = 0;i < runArray.count;i++)
-					{
-						let paragraphSheet = runArray[i] ["ParagraphSheet"] as? NSDictionary
-						if (paragraphSheet != nil && paragraphSheet!["Properties"] != nil && paragraphSheet!["Properties"]!["Justification"] != nil) {
-							_alignment!.push(alignments[min(paragraphSheet!["Properties"]!["Justification"] as! Int, 3)]) ;
+					if let EngineDict = engineData["EngineDict"] as? NSDictionary {
+						if let ParagraphRun = EngineDict["ParagraphRun"] as? NSDictionary {
+							if let RunArray = ParagraphRun["RunArray"] as? NSArray {
+								let alignments: [String] = ["left", "right", "center", "justify"] ;
+								for (var i = 0;i < RunArray.length;i++)
+								{
+									if let Run = RunArray[i] as? NSDictionary {
+										if let ParagraphSheet = Run["ParagraphSheet"] as? NSDictionary {
+											if let Properties = ParagraphSheet["Properties"] as? NSDictionary {
+												if let Justification = Properties["Justification"] as? NSNumber {
+													_alignment!.push(alignments[min(Int(Justification), 3)]) ;
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -160,24 +175,24 @@ public class TypeTool : AdditionalLayerInfoBase
 			if (_colors == nil)
 			{
 				_colors = NSMutableArray() ;
-				if (styles["FillColor"] != nil)
-				{
-					var fillColors: NSMutableArray = styles["FillColor"] as! NSMutableArray;
-					fillColors = TypeTool.uniq(fillColors) ;
-					for (var i = 0;i < fillColors.count;i++)
+				if var FillColors = styles["FillColor"] as? NSArray {
+					FillColors = TypeTool.uniq(FillColors) ;
+					for (var i = 0;i < FillColors.length;i++)
 					{
-						let values: NSMutableArray = fillColors[i] ["Values"]! as! NSMutableArray;
-						let newValues = NSMutableArray() ;
-						for (var j = 0;j < values.count;j++)
-						{
-							let value = round((values[j] as! Double) * 255.0) ;
-							newValues.push(value) ;
+						if let FillColor = FillColors[i] as? NSDictionary {
+							if let Values = FillColor["Values"] as? NSArray {
+								let newValues = NSMutableArray() ;
+								for (var j = 0;j < Values.length;j++) {
+									let value = round(Double(Values[j] as! NSNumber) * 255.0) ;
+									newValues.push(value) ;
+								}
+								newValues.push(newValues.shift()!) ;// 将ARGB变为RGBA | Change ARGB -> RGBA for consistency
+								_colors!.push(newValues) ;
+							}
 						}
-						newValues.push(newValues.firstObject!) ;// 将ARGB变为RGBA | Change ARGB -> RGBA for consistency
-						newValues.removeObjectAtIndex(0) ;
-						_colors!.push(newValues) ;
 					}
 				}
+				
 				if (_colors!.count == 0) {
 					_colors!.push([0, 0, 0, 255]) ;
 				}
@@ -190,16 +205,18 @@ public class TypeTool : AdditionalLayerInfoBase
 	 文本数据对象 <br>
 	 Text engine data.
 	 */
-	public var engineData: NSDictionary
+	public var engineData: NSDictionary?
 	{
 		get {
-			if (!engineDataParsed)
-			{
+			if !engineDataParsed {
 				engineDataParsed = true
-				let currentData = data as! NSMutableDictionary;
-				currentData["engineData"] = EngineData.parse(self.data["text"]!!["EngineData"]! as! ByteArray) ;
+				if let text = data["text"] as? NSDictionary {
+					if let EngineDataBytes = text["EngineData"] as? ByteArray {
+						data["engineData"] = EngineData.parse(EngineDataBytes)
+					}
+				}
 			}
-			return self.data["engineData"]! as! NSDictionary;
+			return self.data["engineData"] as? NSDictionary;
 		}
 	}
 	
@@ -209,17 +226,23 @@ public class TypeTool : AdditionalLayerInfoBase
 	 */
 	public var styles: NSDictionary {
 		get {
-			if (_styles == nil)
-			{
+			if _styles == nil {
 				let datas: NSMutableArray = [] ;
-				if (engineData["EngineDict"] != nil && engineData["EngineDict"]!["StyleRun"] != nil && engineData["EngineDict"]!["StyleRun"]!!["RunArray"] != nil)
-				{
-					let runArray: NSMutableArray = engineData["EngineDict"]!["StyleRun"]!!["RunArray"] as! NSMutableArray;
-					for (var i = 0;i < runArray.count;i++)
-					{
-						let StyleSheet: NSMutableDictionary? = runArray[i] ["StyleSheet"] as? NSMutableDictionary;
-						if (StyleSheet != nil && StyleSheet!["StyleSheetData"] != nil) {
-							datas.push(StyleSheet!["StyleSheetData"]!) ;
+				if let engineData = engineData {
+					if let EngineDict = engineData["EngineDict"] as? NSDictionary {
+						if let StyleRun = EngineDict["StyleRun"] as? NSDictionary {
+							if let RunArray = StyleRun["RunArray"] as? NSArray {
+								for (var i = 0;i < RunArray.length;i++)
+								{
+									if let Run = RunArray[i] as? NSDictionary{
+										if let StyleSheet = Run["StyleSheet"] as? NSDictionary{
+											if StyleSheet["StyleSheetData"] != nil{
+												datas.push(StyleSheet["StyleSheetData"]!) ;
+											}
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -275,7 +298,7 @@ public class TypeTool : AdditionalLayerInfoBase
 	 * Colors are returned in RGBA format and fonts may include some internal
 	 * Photoshop fonts.
 	 */
-	public func toCss() -> String{
+	public func toCss() -> String {
 		let definition = [
 			"font - family" : fonts.join(", "),
 			"font - size" : String(sizes[0]) + "pt",
@@ -283,16 +306,14 @@ public class TypeTool : AdditionalLayerInfoBase
 			"text - align" : String(alignment[0])
 		] ;
 		let css = NSMutableArray() ;
-		for (key,value) in definition{
+		for (key, value) in definition {
 			css.push(String(key) + ": " + String(value) + ";") ;
 		}
-		return  css.join("\n");
+		return css.join("\n") ;
 	}
 	
-	internal func parseTransformInfo()
-	{
-		let currentData: NSMutableDictionary = data as! NSMutableDictionary;
-		currentData["transform"] = NSMutableDictionary(dictionary: [
+	internal func parseTransformInfo(){
+		data["transform"] = NSMutableDictionary(dictionary: [
 				"xx": self.fileBytes!.readDouble(),
 				"xy": self.fileBytes!.readDouble(),
 				"yx": self.fileBytes!.readDouble(),
