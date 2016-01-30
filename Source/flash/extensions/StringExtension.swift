@@ -5,7 +5,7 @@
 // Created by featherJ on 16/1/5.
 // Copyright © 2016年 fancynode. All rights reserved.
 //
-
+import Foundation;
 public extension String {
 	/**
 	 返回一个字符串，该字符串由参数中的 Unicode 字符代码所表示的字符组成。<br><br>
@@ -64,6 +64,27 @@ public extension String {
 	}
 	
 	/**
+	 在 String 对象末尾追加补充参数（如果需要，将它们转换为字符串）并返回结果字符串。
+	 源 String 对象的原始值保持不变。<p>
+	 Appends the supplied arguments to the end of the String object,
+	 converting them to strings if necessary, and returns the resulting string.
+	 The original value of the source String object remains unchanged.
+
+	 - parameter args: 0 个或多个要连接的值。<p>
+	 Zero or more values to be concatenated.
+
+	 - returns: 由该字符串与指定的参数连接而成的新字符串。<p>
+	 A new string consisting of this string concatenated with the specified parameters.
+	 */
+	public func concat(args: AnyObject...) -> String {
+		var str: String = ""
+		for (var i = 0;i < args.count;i++) {
+			str += String(args[i])
+		}
+		return str
+	}
+	
+	/**
 	 返回一个子字符串，该子字符串中的字符是通过从指定的 startIndex 开始，按照 len 指定的长度截取所得的。原始字符串保持不变。<p>
 	 Returns a substring consisting of the characters that start at the specified startIndex and with a length specified by len. The original string is unmodified.
 
@@ -75,7 +96,7 @@ public extension String {
 	 - returns: 基于指定参数的子字符串。<br>
 	 A substring based on the specified parameters.
 	 */
-	public func substr(startIndex: Int = 0, _ len: Int = 0x7fffffff) -> String {
+	public func substr(startIndex: Int = 0, _ len: Int = Int.max) -> String {
 		var start = startIndex;
 		if (start < 0) {
 			start = self.length + start;
@@ -109,7 +130,7 @@ public extension String {
 	 - returns: 基于指定参数的子字符串。<br>
 	 A substring based on the specified parameters.
 	 */
-	public func substring(startIndex: Int = 0, _ endIndex: Int = 0x7fffffff) -> String {
+	public func substring(startIndex: Int = 0, _ endIndex: Int = Int.max) -> String {
 		var start = min(startIndex, endIndex) ;
 		start = max(0, start) ;
 		start = min(self.length, start) ;
@@ -133,8 +154,10 @@ public extension String {
 	 - returns: 指定子字符串的第一个匹配项的索引，或 -1。<br>
 	 The index of the first occurrence of the specified substring or -1.
 	 */
-	public func indexOf(val: String, startIndex: Int = 0) -> Int{
-		let range = self.rangeOfString(val)
+	public func indexOf(val: String, _ startIndex: Int = 0) -> Int {
+		let range = self.rangeOfString(val,
+			options: NSStringCompareOptions(rawValue: 0), range: Range(start: self.startIndex.advancedBy(startIndex), end: self.endIndex)
+		)
 		if let range = range {
 			return self.startIndex.distanceTo(range.startIndex)
 		} else {
@@ -142,6 +165,78 @@ public extension String {
 		}
 	}
 	
+	/**
+	 从右向左搜索字符串，并返回在 startIndex 之前找到的最后一个 val 匹配项的索引。
+	 此索引从零开始，这意味着第一个字符位于索引 0 处，最后一个字符位于 string.length - 1 处。
+	 如果未找到 val，则该方法返回 -1。<p>
+	 Searches the string from right to left and returns the index of the last
+	 occurrence of val found before startIndex. The index is zero-based,
+	 meaning that the first character is at index 0, and the last is at string.length - 1.
+	 If val is not found, the method returns -1.
+
+	 - parameter val:        要搜索的字符串。<p>
+	 The string for which to search.
+
+	 - parameter startIndex: 一个可选整数，指定开始搜索 val 的起始索引。
+	 默认为允许的最大索引值。如果未指定 startIndex，则从字符串中的最后一项开始搜索。<p>
+	 An optional integer specifying the starting index from which to search for val.
+	 The default is the maximum value allowed for an index.
+	 If startIndex is not specified, the search starts at the last item in the string.
+
+	 - returns: 指定子字符串的最后一个匹配项的位置，或 -1（如果未找到）。<p>
+	 The position of the last occurrence of the specified substring or -1 if not found.
+	 */
+	public func lastIndexOf(val: String, _ startIndex: Int = Int.max) -> Int {
+		let range = self.rangeOfString(val,
+			options: .BackwardsSearch,
+			range: Range(start: self.startIndex, end: self.startIndex.advancedBy(startIndex))
+		)
+		if let range = range {
+			return self.startIndex.distanceTo(range.startIndex)
+		} else {
+			return -1
+		}
+	}
+	
+	/**
+	 返回一个字符串，该字符串包括从 startIndex 字符一直到 endIndex 字符（但不包括该字符）之间的所有字符。
+	 不修改原始 String 对象。如果未指定 endIndex 参数，此子字符串的结尾就是该字符串的结尾。
+	 如果按 startIndex 索引到的字符与按 endIndex 索引到的字符相同或位于后者的右侧，则该方法返回一个空字符串。<p>
+	 Returns a string that includes the startIndex character and all characters up to,
+	 but not including, the endIndex character. The original String object is not modified.
+	 If the endIndex parameter is not specified,
+	 then the end of the substring is the end of the string.
+	 If the character indexed by startIndex is the same as or to the right of
+	 the character indexed by endIndex, the method returns an empty string.
+
+	 - parameter startIndex: 片段起始点的从 0 开始的索引。如果 startIndex 是一个负数，则从右到左创建片段，
+	 其中 -1 是最后一个字符。<p>
+	 The zero-based index of the starting point for the slice.
+	 If startIndex is a negative number, the slice is created from right-to-left,
+	 where -1 is the last character.
+
+	 - parameter endIndex:   一个比片段终点的索引大 1 的整数。由 endIndex 参数索引的字符未包括在已提取的字符串中。
+	 如果 endIndex 是一个负数，则终点根据从字符串的结尾向后数确定，其中 -1 表示最后一个字符。
+	 默认为允许的最大索引值。如果省略此参数，则使用 String.length。<p>
+	 An integer that is one greater than the index of the ending point for the slice.
+	 The character indexed by the endIndex parameter is not included in the extracted string.
+	 If endIndex is a negative number,
+	 the ending point is determined by counting back from the end of the string,
+	 where -1 is the last character. The default is the maximum value allowed for an index.
+	 If this parameter is omitted, String.length is used.
+
+	 - returns: 基于指定索引的子字符串。<p>
+	 A substring based on the specified indices.
+	 */
+	public func slice(startIndex: Int = 0, endIndex: Int = Int.max) -> String {
+		var start = startIndex;
+		var end = endIndex;
+		if (start < 0) {start = length + start}
+		if (end < 0) {end = length + end}
+		if (start > length) {start = length}
+		if (end > length) {end = length}
+		return substring(start, end) ;
+	}
 	/**
 	 一个整数，它指定在所指定的 String 对象中的字符数。<p>
 	 因为所有字符串索引都是从零开始的，所以任何字符串 x 的最后一个字符的索引都是 x.length - 1。<br><br>

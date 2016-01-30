@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public extension NSArray {
 	/**
 	 将参数中指定的元素与数组中的元素连接，并创建新的数组。
@@ -45,6 +46,45 @@ public extension NSArray {
 			}
 		}
 		return newArray;
+	}
+	
+	/**
+	 返回由原始数组中某一范围的元素构成的新数组，而不修改原始数组。
+	 返回的数组包括 startIndex 元素以及从其开始到endIndex 元素（但不包括该元素）的所有元素。<p>
+	 如果不传递任何参数，则新数组是原始数组的副本（浅表克隆）。<br><br>
+	 Returns a new array that consists of a range of elements from the original array,
+	 without modifying the original array. The returned array includes
+	 the startIndex element and all elements up to, but not including, the endIndex element.<p>
+	 If you don't pass any parameters,
+	 the new array is a duplicate (shallow clone) of the original array.
+
+	 - parameter startIndex: 一个数字，指定片段起始点的索引。
+	 如果 startIndex 是负数，则起始点从数组的结尾开始，其中 -1 指的是最后一个元素。<p>
+	 A number specifying the index of the starting point for the slice.
+	 If startIndex is a negative number, the starting point begins at the end of the array,
+	 where -1 is the last element.
+
+	 - parameter endIndex:   一个数字，指定片段终点的索引。如果省略此参数，
+	 则片段包括数组中从开头到结尾的所有元素。如果 endIndex 是负数，
+	 则终点从数组的结尾指定，其中 -1 指的是最后一个元素。<p>
+	 A number specifying the index of the ending point for the slice.
+	 If you omit this parameter, the slice includes all elements from
+	 the starting point to the end of the array. If endIndex is a negative number,
+	 the ending point is specified from the end of the array, where -1 is the last element.
+
+
+	 - returns: 一个数组，由原始数组中某一范围的元素组成。<p>
+	 An array that consists of a range of elements from the original array.
+	 */
+	public func slice(startIndex: Int = 0, _ endIndex: Int = Int.max) -> NSMutableArray {
+		var start = startIndex;
+		var end = endIndex;
+		if (start < 0) {start = length + start}
+		if (end < 0) {end = length + end}
+		if (start > length) {start = length}
+		if (end > length) {end = length}
+		if (end <= start) {return NSMutableArray()} ;
+		return NSMutableArray(array: self.subarrayWithRange(NSRange(location: start, length: end - start))) ;
 	}
 	
 	/**
